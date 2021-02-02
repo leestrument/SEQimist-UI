@@ -2,7 +2,7 @@
     
     <div class='seq-piano-roll-grid'>
 
-        <div class="seq-piano-roll-grid-line" v-for='i in 16' :key="i"></div>
+        <div class="seq-piano-roll-grid-item" v-for='i in 16' :key="i"></div>
 
     </div>
 
@@ -32,7 +32,7 @@ export default defineComponent({
 
     }
 
-    .seq-piano-roll-grid-line {
+    .seq-piano-roll-grid-item {
 
         border-left: 2px solid rgb(60, 60, 60);
 

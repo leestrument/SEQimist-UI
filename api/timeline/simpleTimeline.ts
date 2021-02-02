@@ -4,12 +4,12 @@ const MIDI_CLIP_COUNT_DEF = 1
 
 export class SimpleTimeline {
 
+    private _lastSelectedClip : MidiClip
 
     constructor(
 
         private _clips                      = Array.from({ length: MIDI_CLIP_COUNT_DEF }, () => new MidiClip), 
         private _lastSelectedClipIndex      = 0,
-        private _lastSelectedClip           = null,
         private _multipleClipsAreSelected   = false,
 
     ){ this._lastSelectedClip = this._clips[this._lastSelectedClipIndex] }
@@ -113,6 +113,11 @@ export class SimpleTimeline {
     public getLastSelectedClip(): MidiClip {
 
         return this._lastSelectedClip
+
+    }
+    public getCurrentTrackCount(): number {
+
+        return this._lastSelectedClip.getVisibleTrackCount()
 
     }
     

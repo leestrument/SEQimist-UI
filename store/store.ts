@@ -14,6 +14,30 @@ const store = createStore({
         doubleClickClip                 : (state: SEQimist) => state.getTimeline().selectAllClips(),
         mouseDownClipColor              : (state: SEQimist, clipColor: string) => state.getTimeline().setSelectedClipsColor(clipColor),
 
+        // tracks
+        mouseDownTracks                 : (state: SEQimist, event: any) => {
+            
+            const target    = event.target
+            const className = target.className
+
+            if (className === 'seq-piano-roll-grid-item') {
+
+                // get track index
+                let node = target
+                while (node.className !== 'seq-track') node = node.parentNode
+                const trackIndex = Array.from(document.getElementsByClassName('seq-track')).indexOf(node)
+
+                // get grid index
+                const gridIndex = Array.from(target.parentNode.children).indexOf(target)
+                
+                // add note.
+                const pianoRoll = state.getTimeline().getLastSelectedClip().getTrack(trackIndex).getMultiSequencer().getPianoRoll()
+                pianoRoll.addNoteByGridIndex(gridIndex, 64)
+
+            }
+                    
+        },
+
         // inspector-trackcount
         mouseDownTrackCount             : (state: SEQimist, trackCount: number) => state.getTimeline().setSelectedClipsVisibleTrackCount(trackCount)
 

@@ -1,6 +1,6 @@
 <template>
     
-    <div class='seq-tracks'>
+    <div class='seq-tracks' @mousedown="mouseDownTracks">
         <seq-track v-for="e in lastSelectedClip.getVisibleTrackCount()" :key="e"/>
     </div>
 
@@ -8,21 +8,20 @@
 
 <script lang="ts">
 
-import { defineComponent, computed, onRenderTracked } from 'vue'
-import { useStore } from 'vuex'
-import SeqTrack from './seq-track.vue'
+import { defineComponent, computed }    from 'vue'
+import { useStore }                     from 'vuex'
+import SeqTrack                         from './seq-track.vue'
 
 export default defineComponent({
 
     components : { SeqTrack },
     setup() {
 
-        const store = useStore()
-        const lastSelectedClip = computed(() => store.getters.lastSelectedClip)
+        const store             = useStore()
+        const lastSelectedClip  = computed(() => store.getters.lastSelectedClip)
+        const mouseDownTracks = (e: Event): void => store.commit('mouseDownTracks', e)
 
-        // onRenderTracked(() => console.log('re-render!'))
-
-        return { lastSelectedClip }
+        return { lastSelectedClip, mouseDownTracks }
 
     }
 
