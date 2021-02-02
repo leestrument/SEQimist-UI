@@ -6,7 +6,6 @@
         <seq-piano-roll-grid/>
         <seq-piano-roll-event-listener/>
         <!-- <seq-notes/> -->
-
     </div>
 
 </template>
@@ -18,7 +17,6 @@ import SeqPianoRollPanel            from './seq-piano-roll-panel.vue'
 import SeqPianoRollGrid             from './seq-piano-roll-grid.vue'
 import SeqPianoRollEventListener    from './seq-piano-roll-event-listener.vue'
 import SeqNotes                     from '../note/seq-notes.vue'
-
 
 export default defineComponent({
 
