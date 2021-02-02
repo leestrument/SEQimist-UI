@@ -13,11 +13,11 @@
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
-import SeqTrackMute from './seq-track-mute.vue'
-import SeqTrackSolo from './seq-track-solo.vue'
-import SeqTrackHeader from './seq-track-header.vue'
-import SeqMultiSequencer from '../sequencer/seq-multi-sequencer.vue'
+import { defineComponent }  from 'vue'
+import SeqTrackMute         from './seq-track-mute.vue'
+import SeqTrackSolo         from './seq-track-solo.vue'
+import SeqTrackHeader       from './seq-track-header.vue'
+import SeqMultiSequencer    from '../sequencer/seq-multi-sequencer.vue'
 
 export default defineComponent({
 
