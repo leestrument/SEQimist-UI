@@ -1,27 +1,15 @@
-import { LeeRange } from '../helper/LeeRange'
-import { VelocityCurveType } from './VelocityCurveType'
-
-export const VELOCITY_CURVE_TYPE_DEF    = VelocityCurveType.Up
-export const VELOCITY_CURVE_MIN_DEF     = 1
-export const VELOCITY_CURVE_MAX_DEF     = 127
+import { LeeRange }             from '../helper/LeeRange'
+import { VelocityCurveType }    from './VelocityCurveType'
 
 export class VelocityCurve extends LeeRange {
 
     constructor(
+        
+        private _type = VelocityCurveType.Up
+        
+    ){ super(1, 127) }
 
-        private _type = VELOCITY_CURVE_TYPE_DEF
-
-    ){ super(VELOCITY_CURVE_MIN_DEF, VELOCITY_CURVE_MAX_DEF) }
-
-    public setType(type: VelocityCurveType): void {
-
-        this._type = type
-
-    }
-    public getType(): VelocityCurveType {
-
-        return this._type
-
-    }
+    public setType(type: VelocityCurveType)     : void              { this._type = type }
+    public getType()                            : VelocityCurveType { return this._type }
 
 }
