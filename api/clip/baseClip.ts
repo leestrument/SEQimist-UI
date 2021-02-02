@@ -1,4 +1,4 @@
-import LeeRandom from '../helper/leeRandom'
+import LeeRandom from '../helper/LeeRandom'
 
 export const BASE_CLIP_IS_SELECTED_DEF = true
 

@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-import { SEQimist } from '../api/container/seqimist'
+import { SEQimist } from '../api/container/SEQimist'
 
 const store = createStore({
 

@@ -1,4 +1,4 @@
-import { SimpleTimeline } from '../timeline/simpleTimeline'
+import { SimpleTimeline } from '../timeline/SimpleTimeline'
 
 export class SEQimist {
 

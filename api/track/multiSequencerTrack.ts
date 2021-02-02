@@ -1,5 +1,5 @@
-import { BaseTrack }        from './baseTrack'
-import { MultiSequencer }   from '../sequencer/multiSequencer'
+import { BaseTrack }        from './BaseTrack'
+import { MultiSequencer }   from '../sequencer/MultiSequencer'
 
 export class MultiSequencerTrack extends BaseTrack {
 

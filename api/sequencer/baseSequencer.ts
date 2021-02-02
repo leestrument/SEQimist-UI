@@ -1,4 +1,4 @@
-import { BaseNote } from '../note/baseNote'
+import { BaseNote } from '../note/BaseNote'
 
 export const BASE_SEQUENCER_GRID_COUNT_DEF = 16
 

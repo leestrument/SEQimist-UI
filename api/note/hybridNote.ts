@@ -1,10 +1,10 @@
-import { BaseNote }             from './baseNote'
-import { StartRandomizer }      from '../note-randomizer/startRandomizer'
-import { GateRandomizer }       from '../note-randomizer/gateRandomizer'
-import { SubNote }              from './subNote'
-import { VelocityCurveType }    from '../velocity/velocityCurveType'
-import { VelocityCurve }        from '../velocity/velocityCurve'
-import LeeArray                 from '../helper/leeArray'
+import { BaseNote }             from './BaseNote'
+import { StartRandomizer }      from '../note-randomizer/StartRandomizer'
+import { GateRandomizer }       from '../note-randomizer/GateRandomizer'
+import { SubNote }              from './SubNote'
+import { VelocityCurveType }    from '../velocity/VelocityCurveType'
+import { VelocityCurve }        from '../velocity/VelocityCurve'
+import LeeArray                 from '../helper/LeeArray'
 
 export const HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MIN = 1
 export const HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MAX = 32

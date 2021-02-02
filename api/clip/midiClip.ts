@@ -1,5 +1,5 @@
-import { BaseClip } from './baseClip'
-import { MultiSequencerTrack } from '../track/multiSequencerTrack'
+import { BaseClip } from './BaseClip'
+import { MultiSequencerTrack } from '../track/MultiSequencerTrack'
 
 export class MidiClip extends BaseClip {
 

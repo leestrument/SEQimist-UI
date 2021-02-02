@@ -1,5 +1,5 @@
-import { PianoRoll }        from './pianoRoll'
-import { StepSequencer }    from './stepSequencer'
+import { PianoRoll }        from './PianoRoll'
+import { StepSequencer }    from './StepSequencer'
 
 export enum SequencerType {
 

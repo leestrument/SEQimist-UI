@@ -1,4 +1,4 @@
-import { HybridNoteSequencer } from './hybridNoteSequencer'
+import { HybridNoteSequencer } from './HybridNoteSequencer'
 
 export class PianoRoll extends HybridNoteSequencer {
 

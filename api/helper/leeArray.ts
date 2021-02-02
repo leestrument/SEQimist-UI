@@ -1,4 +1,4 @@
-import LeeRandom from './leeRandom'
+import LeeRandom from './LeeRandom'
 
 const fill      = (count: number, valueToFill: number): number[] => (
 

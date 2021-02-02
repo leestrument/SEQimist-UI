@@ -1,4 +1,4 @@
-import { MidiClip } from '../clip/midiClip'
+import { MidiClip } from '../clip/MidiClip'
 
 const MIDI_CLIP_COUNT_DEF = 1
 
