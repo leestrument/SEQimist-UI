@@ -9,7 +9,7 @@ export class VelocityCurve extends LeeRange {
         
     ){ super(1, 127) }
 
-    public setType(type: VelocityCurveType)     : void              { this._type = type }
-    public getType()                            : VelocityCurveType { return this._type }
+    public setType  (type: VelocityCurveType)     : void              { this._type = type }
+    public getType  ()                            : VelocityCurveType { return this._type }
 
 }
