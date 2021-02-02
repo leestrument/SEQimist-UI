@@ -1,9 +1,7 @@
 <template>
     
     <div>
-
-        <seq-svg-dice :color="'red'"/>
-
+        <seq-svg-dice color="white"/>
     </div>
 
 </template>
