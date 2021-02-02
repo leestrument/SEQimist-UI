@@ -2,7 +2,7 @@
     
     <div class='seq-multi-sequencer'>
 
-        <seq-piano-roll/>
+        <seq-piano-roll :track-index="trackIndex"/>
 
     </div>
 
@@ -16,7 +16,8 @@ import SeqStepSequencer from './seq-step-sequencer.vue'
 
 export default defineComponent({
 
-    components : { SeqPianoRoll, SeqStepSequencer}
+    components : { SeqPianoRoll, SeqStepSequencer },
+    props : { trackIndex : { type : Number, required : true }}, 
 
 })
 

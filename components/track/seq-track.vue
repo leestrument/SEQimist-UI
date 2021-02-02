@@ -2,10 +2,10 @@
     
     <div class='seq-track'>
 
-        <seq-track-mute/>
-        <seq-track-solo/>
-        <seq-track-header/>
-        <seq-multi-sequencer/>
+        <seq-track-mute         :track-index="trackIndex"/>
+        <seq-track-solo         :track-index="trackIndex"/>
+        <seq-track-header       :track-index="trackIndex"/>
+        <seq-multi-sequencer    :track-index="trackIndex"/>
 
     </div>
 
@@ -22,6 +22,7 @@ import SeqMultiSequencer    from '../sequencer/seq-multi-sequencer.vue'
 export default defineComponent({
 
     components : { SeqTrackMute, SeqTrackSolo, SeqTrackHeader, SeqMultiSequencer },
+    props : { trackIndex : { type : Number, required : true }}
 
 })
 

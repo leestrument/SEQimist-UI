@@ -10,7 +10,8 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
 
-    components : {}
+    components : {},
+    props : { trackIndex : { type : Number, required : true }},
 
 })
 

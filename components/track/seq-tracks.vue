@@ -1,7 +1,13 @@
 <template>
     
     <div class='seq-tracks' @mousedown="mouseDownTracks">
-        <seq-track v-for="e in lastSelectedClip.getVisibleTrackCount()" :key="e"/>
+        <seq-track 
+        
+            v-for="(e, i) in lastSelectedClip.getVisibleTrackCount()" 
+            :key="i"
+            :track-index="i"
+
+        />
     </div>
 
 </template>

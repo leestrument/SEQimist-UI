@@ -8,7 +8,7 @@ const store = createStore({
 
         // clip
         mouseDownButtonAdd              : (state: SEQimist) => state.getTimeline().addClip(),
-        mouseDownClipWithoutModifier    : (state: SEQimist, clipIndex: number) => state.getTimeline().selectSingleClip(clipIndex),
+        mouseDownClipWithoutModifier    : (state: SEQimist, clipIndex: number) => { console.log(document.getElementsByTagName('*').length); state.getTimeline().selectSingleClip(clipIndex) },
         mouseDownClipWithCommand        : (state: SEQimist, clipIndex: number) => state.getTimeline().selectAnotherClip(clipIndex),
         mouseDownClipWithShift          : (state: SEQimist, clipIndex: number) => state.getTimeline().selectMultipleClipsByRange(clipIndex),
         doubleClickClip                 : (state: SEQimist) => state.getTimeline().selectAllClips(),
@@ -34,6 +34,8 @@ const store = createStore({
                 const pianoRoll = state.getTimeline().getLastSelectedClip().getTrack(trackIndex).getMultiSequencer().getPianoRoll()
                 pianoRoll.addNoteByGridIndex(gridIndex, 64)
 
+                console.log(document.getElementsByTagName('*').length)
+
             }
                     
         },
@@ -50,6 +52,15 @@ const store = createStore({
         clipColor       : (state) => (clipIndex: number) => state.getTimeline().getClip(clipIndex).getColor(),
         multipleClipsAreSelected : (state) => state.getTimeline().multipleClipsAreSelected(),
         lastSelectedClip : (state) => state.getTimeline().getLastSelectedClip(),
+
+        // notes
+        getPianoRollNotes : (state) => (trackIndex: number) => {
+
+            const notes = state.getTimeline().getLastSelectedClip().getTrack(trackIndex).getMultiSequencer().getPianoRoll().getNotes()
+
+            return notes
+
+        }
         
     },    
 
