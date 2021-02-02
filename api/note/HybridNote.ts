@@ -1,7 +1,6 @@
 import { BaseNote }             from './BaseNote'
-import { StartRandomizer }      from '../note-randomizer/StartRandomizer'
-import { GateRandomizer }       from '../note-randomizer/GateRandomizer'
 import { SubNote }              from './SubNote'
+import { LeeRange }             from '../helper/LeeRange'
 import { VelocityCurveType }    from '../velocity/VelocityCurveType'
 import { VelocityCurve }        from '../velocity/VelocityCurve'
 import LeeArray                 from '../helper/LeeArray'
@@ -18,9 +17,9 @@ export class HybridNote extends BaseNote {
         duration                        : number,
         private _visibleSubNoteCount    = HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MIN,
         private _subNotes               = Array.from({length : HYBRID_NOTE_VISIBLE_SUB_NOTES_COUNT_MAX }, () => new SubNote),
-        private _startRandomizer        = new StartRandomizer,
         private _velocityCurve          = new VelocityCurve,
-        private _gateRandomizer         = new GateRandomizer,
+        private _startRandomizer        = new LeeRange(0, 0),
+        private _gateRandomizer         = new LeeRange(0, 1),
         
     ){ super(pitch, start, duration) }
 
@@ -78,7 +77,7 @@ export class HybridNote extends BaseNote {
         return this._subNotes
 
     }
-    public getStartRandomizer(): StartRandomizer {
+    public getStartRandomizer(): LeeRange {
 
         return this._startRandomizer
 
@@ -88,7 +87,7 @@ export class HybridNote extends BaseNote {
         return this._velocityCurve
 
     }
-    public getGateRandomizer(): GateRandomizer {
+    public getGateRandomizer(): LeeRange {
 
         return this._gateRandomizer
 
