@@ -8,10 +8,6 @@ export class SEQimist {
         
     ){}
 
-    public getTimeline(): SimpleTimeline {
-
-        return this._timeline
-
-    }
+    public getTimeline(): SimpleTimeline { return this._timeline }
 
 }
