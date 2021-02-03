@@ -6,7 +6,7 @@ export class MidiClip extends BaseClip {
     constructor(
 
         private _visibleTrackCount  = 16,
-        private _tracks             = Array.from({length : 64}, (e, i) => new MultiSequencerTrack(i))
+        private _tracks             = Array.from({length : 64}, () => new MultiSequencerTrack)
 
     ){ super() }
 
