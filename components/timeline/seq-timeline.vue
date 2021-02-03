@@ -11,7 +11,6 @@
 <script lang="ts">
 
 import { defineComponent } from 'vue'
-import SeqTimelineLoop from '../timeline/seq-timeline-loop.vue'
 import SeqClips from '../clip/seq-clips.vue'
 
 export default defineComponent({

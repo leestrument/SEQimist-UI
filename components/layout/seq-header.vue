@@ -11,15 +11,11 @@
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
-import SeqGlobal        from '../global/seq-global.vue'
-import SeqTimeline      from '../timeline/seq-timeline.vue'
+import { defineComponent }  from 'vue'
+import SeqGlobal            from '../global/seq-global.vue'
+import SeqTimeline          from '../timeline/seq-timeline.vue'
 
-export default defineComponent({
-
-    components : { SeqGlobal, SeqTimeline }
-
-})
+export default defineComponent({ components : { SeqGlobal, SeqTimeline } })
 
 </script>
 

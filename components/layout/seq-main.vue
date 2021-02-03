@@ -11,16 +11,12 @@
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
-import SeqEditor    from '../editor/seq-editor.vue'
-import SeqInspector from '../inspector/seq-inspector.vue'
+import { defineComponent }  from 'vue'
+import SeqEditor            from '../editor/seq-editor.vue'
+import SeqInspector         from '../inspector/seq-inspector.vue'
 
-export default defineComponent({
-
-    components : { SeqEditor, SeqInspector}
-
-})
-
+export default defineComponent({ components : { SeqEditor, SeqInspector} })
+ 
 </script>
 
 <style scoped>

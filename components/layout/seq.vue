@@ -11,15 +11,11 @@
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
-import SeqHeader from './seq-header.vue'
-import SeqMain from './seq-main.vue'
+import { defineComponent }  from 'vue'
+import SeqHeader            from './seq-header.vue'
+import SeqMain              from './seq-main.vue'
 
-export default defineComponent({
-
-    components : { SeqHeader, SeqMain }
-
-})
+export default defineComponent({ components : { SeqHeader, SeqMain } })
 
 </script>
 
