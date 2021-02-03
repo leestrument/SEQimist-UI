@@ -1,5 +1,6 @@
 import { BaseNote } from '../note/BaseNote'
 
+/* This is abstract class, should be implemented in derived class */ 
 export abstract class BaseSequencer {
 
     constructor(
