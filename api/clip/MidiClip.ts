@@ -10,28 +10,9 @@ export class MidiClip extends BaseClip {
 
     ){ super() }
 
-    // setter
-    public setVisibleTrackCount(trackCount: number): void {
-
-        this._visibleTrackCount = trackCount
-
-    }
-
-    // getter
-    public getVisibleTrackCount(): number {
-
-        return this._visibleTrackCount
-
-    }
-    public getTracks(): MultiSequencerTrack[] {
-
-        return this._tracks
-
-    }
-    public getTrack(trackIndex: number): MultiSequencerTrack {
-
-        return this._tracks[trackIndex]
-
-    }
+    public setVisibleTrackCount (trackCount: number)    : void                  { this._visibleTrackCount = trackCount }
+    public getVisibleTrackCount ()                      : number                { return this._visibleTrackCount }
+    public getTracks            ()                      : MultiSequencerTrack[] { return this._tracks }
+    public getTrack             (trackIndex: number)    : MultiSequencerTrack   { return this._tracks[trackIndex] }
 
 }
