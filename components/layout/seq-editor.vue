@@ -1,6 +1,6 @@
 <template>
     
-    <div class='seq-step-sequencer'></div>
+    <div class='seq-editor'></div>
 
 </template>
 
@@ -18,9 +18,9 @@ export default defineComponent({
 
 <style scoped>
 
-    .seq-step-sequencer {
+    .seq-editor {
 
-        background: black;
+        background: red;
 
     }
 

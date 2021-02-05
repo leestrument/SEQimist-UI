@@ -1,6 +1,6 @@
 <template>
     
-    <div class='seq-inspector-track'></div>
+    <div class='seq-timeline'></div>
 
 </template>
 
@@ -18,12 +18,9 @@ export default defineComponent({
 
 <style scoped>
 
-    .seq-inspector-track {
+    .seq-timeline {
 
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: blue;
+        background: yellow;
 
     }
 

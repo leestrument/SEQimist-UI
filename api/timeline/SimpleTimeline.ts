@@ -1,3 +1,5 @@
+/* This class needs a lot of refactoring */
+
 import { MidiClip } from '../clip/MidiClip'
 
 export class SimpleTimeline {
