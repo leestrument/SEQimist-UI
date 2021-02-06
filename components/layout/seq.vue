@@ -29,7 +29,7 @@ export default defineComponent({ components : { SeqHeader, SeqTimeline, SeqEdito
 
         width : 100%;
         height : 100%;
-        background: rgb(40, 40, 50);
+        background: rgb(35, 35, 40);
 
         /* layout */
         display: grid;
