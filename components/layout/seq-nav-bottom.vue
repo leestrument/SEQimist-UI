@@ -1,16 +1,21 @@
 <template>
     
-    <div class="seq-nav-bottom"></div>
+    <div class="seq-nav-bottom">
+
+        <seq-timeline/>
+
+    </div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent }  from 'vue'
+import SeqTimeline          from '../timeline/seq-timeline.vue'
 
 export default defineComponent({
 
-    components : {}
+    components : {SeqTimeline}
 
 })
 
@@ -21,6 +26,7 @@ export default defineComponent({
     .seq-nav-bottom {
 
         background: darkgreen;
+        padding: 5px 10px 10px 10px;
 
     }
 
