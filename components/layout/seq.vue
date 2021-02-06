@@ -34,7 +34,7 @@ export default defineComponent({ components : { SeqHeader, SeqTimeline, SeqEdito
         /* layout */
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.15fr 0.55fr 2.3fr;
+        grid-template-rows: 0.1fr 0.55fr 2.3fr;
         gap: 0px 0px;
         grid-template-areas:
             "header header header header"

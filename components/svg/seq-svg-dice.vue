@@ -17,3 +17,9 @@ export default defineComponent({
 })
 
 </script>
+
+<style scoped>
+
+    svg { position: absolute; }
+
+</style>
