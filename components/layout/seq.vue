@@ -48,4 +48,4 @@ export default defineComponent({ components : { SeqHeader, SeqTimeline, SeqEdito
     .seq-editor     { grid-area: editor; }
     .seq-inspector  { grid-area: inspector; }
 
-</style>
+</style> 
