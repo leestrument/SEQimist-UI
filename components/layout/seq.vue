@@ -15,7 +15,7 @@
 
 import { defineComponent }  from 'vue'
 import SeqHeader            from './seq-header.vue'
-import SeqTimeline          from './seq-timeline.vue'
+import SeqTimeline          from '../timeline/seq-timeline.vue'
 import SeqEditor            from './seq-editor.vue'
 import SeqInspector         from './seq-inspector.vue'
 
@@ -29,12 +29,12 @@ export default defineComponent({ components : { SeqHeader, SeqTimeline, SeqEdito
 
         width : 100%;
         height : 100%;
-        background: rgb(30, 30, 35);
+        background: rgb(40, 40, 50);
 
         /* layout */
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 0.1fr 0.55fr 2.3fr;
+        grid-template-rows: 0.13fr 0.5fr 2.3fr;
         gap: 0px 0px;
         grid-template-areas:
             "header header header header"

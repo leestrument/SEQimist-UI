@@ -20,7 +20,10 @@ export default defineComponent({
 
     .seq-timeline {
 
-        background: yellow;
+        margin: 0 10px 10px 10px;
+        border-radius: 10px;
+        background: rgb(80, 80, 90);
+
 
     }
 
