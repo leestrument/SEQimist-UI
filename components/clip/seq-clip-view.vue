@@ -4,10 +4,10 @@
 
         <seq-track 
         
-            v-for="(e, i) in 32" 
-            :key="i"
-            :index="i"
-        
+            v-for="e in 32" 
+            :key="e"
+            :index="32 - e"
+
         />
 
     </div>

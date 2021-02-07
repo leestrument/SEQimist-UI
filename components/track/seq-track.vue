@@ -1,20 +1,31 @@
 <template>
     
-    <div class="seq-track" :style="{ top : top }"></div>
+    <div class="seq-track" :style="{ top : top }">
+
+        <seq-track-header       :index="index"/>
+        <seq-track-mute         :index="index"/>
+        <seq-track-solo         :index="index"/>
+        <seq-multi-sequencer    :index="index"/>        
+
+    </div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed }    from 'vue'
+import SeqTrackHeader                   from './seq-track-header.vue'
+import SeqTrackMute                     from './seq-track-mute.vue'
+import SeqTrackSolo                     from './seq-track-solo.vue'
+import SeqMultiSequencer                from '../sequencer/seq-multi-sequencer.vue'
 
 export default defineComponent({
 
     props : { index : { type : Number, required : true } },
-    components : {},
+    components : { SeqTrackHeader, SeqTrackMute, SeqTrackSolo, SeqMultiSequencer },
     setup(props) {
 
-        const top = computed(() => props.index * 6.25 + '%')
+        const top = computed(() => (32 - props.index - 1) * 6.25 + '%')
 
         return { top }
 
@@ -33,7 +44,10 @@ export default defineComponent({
         height : 6.25%;
         background: tomato;
         box-sizing: border-box;
-        border: 1px solid black;
+        border-bottom: 1px solid rgb(60, 60, 60);
+
+        display: grid;
+        grid-template-columns: 0.06fr 0.03fr 0.03fr 1fr;
 
     }
 
