@@ -12,8 +12,8 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
-import SeqContentLeft       from './seq-content-left.vue'
-import SeqContentRight      from './seq-content-right.vue'
+import SeqContentLeft       from './left/seq-content-left.vue'
+import SeqContentRight      from './right/seq-content-right.vue'
 
 export default defineComponent({
 

@@ -1,6 +1,6 @@
 <template>
     
-    <div class="seq-content-left-right"></div>
+    <div class="seq-content-left-inside-center"></div>
 
 </template>
 
@@ -18,9 +18,9 @@ export default defineComponent({
 
 <style scoped>
 
-    .seq-content-left-right {
+    .seq-content-left-inside-center {
 
-        background: goldenrod;
+        background: blue;
 
     }
 

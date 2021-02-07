@@ -12,8 +12,8 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
-import SeqNav               from './seq-nav.vue'
-import SeqContent           from './seq-content.vue'
+import SeqNav               from './nav/seq-nav.vue'
+import SeqContent           from './content/seq-content.vue'
 
 export default defineComponent({
 

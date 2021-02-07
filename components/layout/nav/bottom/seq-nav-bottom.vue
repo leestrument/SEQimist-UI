@@ -11,7 +11,7 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
-import SeqTimeline          from '../timeline/seq-timeline.vue'
+import SeqTimeline          from '../../../timeline/seq-timeline.vue'
 
 export default defineComponent({
 

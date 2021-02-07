@@ -12,8 +12,8 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
-import SeqNavTop            from './seq-nav-top.vue'
-import SeqNavBottom         from './seq-nav-bottom.vue'
+import SeqNavTop            from './top/seq-nav-top.vue'
+import SeqNavBottom         from './bottom/seq-nav-bottom.vue'
 
 
 export default defineComponent({
