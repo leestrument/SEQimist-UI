@@ -22,6 +22,7 @@ export default defineComponent({
   body {
 
     margin: 0;
+    overflow: hidden; /* prevent body scroll (zittering background) */
 
   }
 
