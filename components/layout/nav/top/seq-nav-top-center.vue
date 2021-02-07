@@ -24,7 +24,7 @@ export default defineComponent({
         left: 35%;
         width: 30%;
         height: 100%;
-        background: red;
+        background: rgb(30, 30, 35);
 
     }
 

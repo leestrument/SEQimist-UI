@@ -30,10 +30,10 @@ export default defineComponent({
         position: absolute;
         width: 100%;
         height: 100%;
-        background: gray;
+        background: rgb(60, 60, 60);
         display: grid;
         grid-template-rows: 0.211fr 1fr;
-        gap: 1px;
+        gap: 2px;
 
     }
 

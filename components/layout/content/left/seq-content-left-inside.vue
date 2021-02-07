@@ -28,9 +28,9 @@ export default defineComponent({ components : { SeqContentLeftInsideLeft, SeqCon
         width : 100%;
         height : 100%;
         box-sizing: border-box;
-        border: 2px solid white;
+        border-radius: 10px;
         display: grid;
-        grid-template-columns: 0.025fr 1fr 0.04fr;
+        grid-template-columns: 0.015fr 1fr 0.04fr;
 
     }
 

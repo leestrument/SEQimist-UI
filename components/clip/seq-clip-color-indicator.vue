@@ -1,6 +1,6 @@
 <template>
     
-    <div class="seq-timeline"></div>
+    <div class="seq-clip-color-indicator"></div>
 
 </template>
 
@@ -18,13 +18,13 @@ export default defineComponent({
 
 <style scoped>
 
-    .seq-timeline {
-
-        position: relative;
+    .seq-clip-color-indicator {
+        
         width : 100%;
         height : 100%;
-        background: rgb(70, 70, 75);
-        border-radius: 10px;
+        background: yellowgreen;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
 
     }
 

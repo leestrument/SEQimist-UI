@@ -22,6 +22,9 @@ export default defineComponent({ components : { SeqToolBox } })
     .seq-content-left-inside-right {
 
         padding: 10px;
+        background: rgb(35, 35, 40);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
 
     }
 

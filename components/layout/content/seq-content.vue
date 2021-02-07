@@ -29,7 +29,7 @@ export default defineComponent({
         
         display: grid;
         grid-template-columns: 1fr 0.215fr;
-        gap: 1px;
+        gap: 2px;
     
     }
 

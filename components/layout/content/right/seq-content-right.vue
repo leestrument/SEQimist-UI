@@ -21,7 +21,7 @@ export default defineComponent({ components : { SeqContentRightInside } })
 
     .seq-content-right {
 
-        background: rgb(35, 35, 40);
+        background: rgb(40, 40, 45);
         padding: 10px;
 
     }
