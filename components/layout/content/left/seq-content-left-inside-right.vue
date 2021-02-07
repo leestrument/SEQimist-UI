@@ -1,18 +1,19 @@
 <template>
     
-    <div class="seq-content-left-inside-right"></div>
+    <div class="seq-content-left-inside-right">
+
+        <seq-tool-box/>
+
+    </div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent }  from 'vue'
+import SeqToolBox           from '../../../tool/seq-tool-box.vue'
 
-export default defineComponent({
-
-    components : {}
-
-})
+export default defineComponent({ components : { SeqToolBox } })
 
 </script>
 
@@ -20,7 +21,7 @@ export default defineComponent({
 
     .seq-content-left-inside-right {
 
-        background: goldenrod;
+        padding: 10px;
 
     }
 

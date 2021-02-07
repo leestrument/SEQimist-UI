@@ -27,9 +27,9 @@ export default defineComponent({
 
     .seq-content { 
         
-        background: rgb(35, 35, 40);
         display: grid;
         grid-template-columns: 1fr 0.215fr;
+        gap: 1px;
     
     }
 

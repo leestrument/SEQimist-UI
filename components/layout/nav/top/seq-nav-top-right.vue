@@ -1,16 +1,21 @@
 <template>
     
-    <div class="seq-nav-top-right"></div>
+    <div class="seq-nav-top-right">
+
+        <seq-timeline-menu/>
+
+    </div>
 
 </template>
 
 <script lang="ts">
 
 import { defineComponent } from 'vue'
+import SeqTimelineMenu from '../../../timeline/seq-timeline-menu.vue'
 
 export default defineComponent({
 
-    components : {}
+    components : { SeqTimelineMenu }
 
 })
 
@@ -22,9 +27,11 @@ export default defineComponent({
 
         position: absolute;
         right: 10px;
-        width: 15%;
+        width: 10%;
         height: 100%;
-        background: gold;
+        box-sizing: border-box;
+        padding-top: 10px;
+        padding-bottom: 5px;
 
     }
 

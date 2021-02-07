@@ -30,7 +30,6 @@ export default defineComponent({
     .seq-nav-top {
 
         position: relative;
-        background: coral;
         /* padding: 10px 10px 5px 10px; */
 
     }

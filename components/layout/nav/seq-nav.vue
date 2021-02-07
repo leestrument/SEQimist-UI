@@ -14,13 +14,8 @@
 import { defineComponent }  from 'vue'
 import SeqNavTop            from './top/seq-nav-top.vue'
 import SeqNavBottom         from './bottom/seq-nav-bottom.vue'
-
-
-export default defineComponent({
-
-    components : { SeqNavTop, SeqNavBottom }
-
-})
+ 
+export default defineComponent({ components : { SeqNavTop, SeqNavBottom } })
 
 </script>
 
@@ -28,9 +23,9 @@ export default defineComponent({
 
     .seq-nav { 
         
-        background: rgb(35, 35, 40);
+        background: rgb(40, 40, 45);
         display: grid;
-        grid-template-rows: 0.31fr 1fr;
+        grid-template-rows: 0.25fr 1fr;
     
     }
 

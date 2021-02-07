@@ -27,11 +27,10 @@ export default defineComponent({ components : { SeqContentLeftInsideLeft, SeqCon
 
         width : 100%;
         height : 100%;
-        background: yellow;
         box-sizing: border-box;
         border: 2px solid white;
         display: grid;
-        grid-template-columns: 0.025fr 1fr 0.05fr;
+        grid-template-columns: 0.025fr 1fr 0.04fr;
 
     }
 

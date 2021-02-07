@@ -13,21 +13,12 @@
 import { defineComponent }  from 'vue'
 import SeqTimeline          from '../../../timeline/seq-timeline.vue'
 
-export default defineComponent({
-
-    components : {SeqTimeline}
-
-})
+export default defineComponent( { components : { SeqTimeline } } )
 
 </script>
 
 <style scoped>
 
-    .seq-nav-bottom {
-
-        background: darkgreen;
-        padding: 5px 10px 10px 10px;
-
-    }
+    .seq-nav-bottom { padding: 5px 10px 10px 10px; }
 
 </style>

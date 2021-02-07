@@ -21,8 +21,8 @@ export default defineComponent({ components : { SeqContentLeftInside } })
 
     .seq-content-left {
 
-        padding: 10px 10px 10px 10px;
-        background: green;
+        background: rgb(40, 40, 45);
+        padding: 10px;
 
     }
 
