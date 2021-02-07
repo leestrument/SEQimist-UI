@@ -1,3 +1,6 @@
+// This component MUST be refactored.
+// Please refer this link : https://css-tricks.com/tabs-with-round-out-borders/ to get idea.
+
 <template>
     
    <div class="seq-inspector-selector" :class="className">
