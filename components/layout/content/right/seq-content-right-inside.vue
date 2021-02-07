@@ -1,18 +1,19 @@
 <template>
     
-    <div class="seq-content-right-inside"></div>
+    <div class="seq-content-right-inside">
+        <seq-content-right-inside-top/>
+        <seq-content-right-inside-bottom/>
+    </div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent }          from 'vue'
+import SeqContentRightInsideTop     from './seq-content-right-inside-top.vue'
+import SeqContentRightInsideBottom  from './seq-content-right-inside-bottom.vue'
 
-export default defineComponent({
-
-    components : {}
-
-})
+export default defineComponent({ components : { SeqContentRightInsideTop, SeqContentRightInsideBottom } })
 
 </script>
 
@@ -20,9 +21,11 @@ export default defineComponent({
 
     .seq-content-right-inside {
 
-        width : 100%;
-        height : 100%;
-        background: rgb(70, 70, 75);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: 0.065fr 1fr;        
 
     }
 

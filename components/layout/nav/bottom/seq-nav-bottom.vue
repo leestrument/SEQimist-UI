@@ -2,7 +2,7 @@
     
     <div class="seq-nav-bottom">
 
-        <seq-timeline/>
+        <seq-nav-bottom-inside/>
 
     </div>
 
@@ -11,9 +11,9 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
-import SeqTimeline          from '../../../timeline/seq-timeline.vue'
+import SeqNavBottomInside   from './seq-nav-bottom-inside.vue'
 
-export default defineComponent( { components : { SeqTimeline } } )
+export default defineComponent( { components : { SeqNavBottomInside } } )
 
 </script>
 

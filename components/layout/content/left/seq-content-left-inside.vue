@@ -30,7 +30,7 @@ export default defineComponent({ components : { SeqContentLeftInsideLeft, SeqCon
         box-sizing: border-box;
         border-radius: 10px;
         display: grid;
-        grid-template-columns: 0.015fr 1fr 0.04fr;
+        grid-template-columns: 0.01fr 1fr 0.035fr;
 
     }
 
