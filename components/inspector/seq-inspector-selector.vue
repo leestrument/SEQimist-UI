@@ -3,7 +3,7 @@
    <div class="seq-inspector-selector" :class="className">
             
         <span v-text="label"></span>
-        <div v-if="isSelected && label !== 'One'" class="seq-inspector-connector">
+        <div v-if="isSelected && label !== 'Clip'" class="seq-inspector-connector">
 
             <div class="seq-inspector-top-border-hider"></div>
             <div class="seq-inspector-selector-border seq-inspector-selector-border-left"></div>
@@ -11,7 +11,7 @@
 
         </div>
         
-        <div v-if="isSelected && label === 'One'" class="seq-inspector-connector">
+        <div v-if="isSelected && label === 'Clip'" class="seq-inspector-connector">
 
             <div class="seq-inspector-top-border-hider-for-one"></div>
             <div class="seq-inspector-selector-border seq-inspector-selector-border-right"></div>

@@ -2,9 +2,9 @@
     
     <div id="seq-inspector-selectors">
 
-        <seq-inspector-selector label="One" :is-selected="state.isSelected[0]" @mousedown="mouseDown(0)"/>
-        <seq-inspector-selector label="Two"  :is-selected="state.isSelected[1]"  @mousedown="mouseDown(1)"/>
-        <seq-inspector-selector label="Three"  :is-selected="state.isSelected[2]" @mousedown="mouseDown(2)"/>
+        <seq-inspector-selector label="Clip" :is-selected="state.isSelected[0]" @mousedown="mouseDown(0)"/>
+        <seq-inspector-selector label="Track"  :is-selected="state.isSelected[1]"  @mousedown="mouseDown(1)"/>
+        <seq-inspector-selector label="Note"  :is-selected="state.isSelected[2]" @mousedown="mouseDown(2)"/>
 
     </div>
 
