@@ -1,16 +1,21 @@
 <template>
     
-    <div class="seq-content-right-inside-bottom"></div>
+    <div class="seq-content-right-inside-bottom">
+
+        <seq-inspector/>
+
+    </div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent }  from 'vue'
+import SeqInspector         from '../../../inspector/seq-inspector.vue'
 
 export default defineComponent({
 
-    components : {}
+    components : { SeqInspector }
 
 })
 
@@ -24,6 +29,7 @@ export default defineComponent({
         border-radius: 10px;
         box-sizing: border-box;
         border: 2px solid rgb(100, 100, 100);
+        padding: 10px;
 
     }
 
