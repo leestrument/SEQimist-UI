@@ -2,9 +2,9 @@
     
     <div class="seq-inspector">
 
-        <seq-inspector-clip     v-if        ="inspectorType === 0"/>
-        <seq-inspector-track    v-else-if   ="inspectorType === 1"/>
-        <seq-inspector-note     v-else-if   ="inspectorType === 2"/>
+        <seq-clip-inspector     v-if        ="inspectorType === 0"/>
+        <seq-track-inspector    v-else-if   ="inspectorType === 1"/>
+        <seq-note-inspector     v-else-if   ="inspectorType === 2"/>
 
     </div>
 
@@ -13,9 +13,9 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
-import SeqInspectorClip     from './seq-inspector-clip.vue'
-import SeqInspectorNote     from './seq-inspector-note.vue'
-import SeqInspectorTrack    from './seq-inspector-track.vue'
+import SeqClipInspector     from '../clip/seq-clip-inspector.vue'
+import SeqTrackInspector    from '../track/seq-track-inspector.vue'
+import SeqNoteInspector     from '../note/seq-note-inspector.vue'
 
 enum InspectorType {
 
@@ -27,7 +27,7 @@ enum InspectorType {
 
 export default defineComponent({
 
-    components : { SeqInspectorClip, SeqInspectorNote, SeqInspectorTrack },
+    components : { SeqClipInspector, SeqTrackInspector, SeqNoteInspector },
     setup() {
 
         const inspectorType = InspectorType.Clip 

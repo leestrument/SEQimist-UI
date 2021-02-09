@@ -1,6 +1,6 @@
 <template>
     
-    <div class="seq-inspector-note"></div>
+    <div class="seq-note-inspector"></div>
 
 </template>
 
@@ -18,7 +18,7 @@ export default defineComponent({
 
 <style scoped>
 
-    .seq-inspector-note {
+    .seq-note-inspector {
 
         position: absolute;
         width : 100%;

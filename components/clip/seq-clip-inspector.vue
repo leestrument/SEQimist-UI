@@ -1,6 +1,6 @@
 <template>
     
-    <div class="seq-inspector-clip">
+    <div class="seq-clip-inspector">
 
         <seq-clip-color-panel/>
         <seq-clip-track-count-panel/>
@@ -25,7 +25,7 @@ export default defineComponent({ components : { SeqClipColorPanel, SeqClipTrackC
 
 <style scoped>
 
-    .seq-inspector-clip {
+    .seq-clip-inspector {
 
         position: absolute;
         width : 100%;
