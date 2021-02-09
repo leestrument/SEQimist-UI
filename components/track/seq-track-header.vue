@@ -26,9 +26,19 @@ export default defineComponent({
     .seq-track-header {
 
         background: palevioletred;
+        margin: 5px 0px 5px 5px;
+        border-radius: 3px;
+
         display: flex;
         justify-content: center;
         align-items: center;
+
+    }
+
+    .seq-track-header > span {
+
+        font-weight: bolder;
+        color: rgb(40, 40, 45);
 
     }
 

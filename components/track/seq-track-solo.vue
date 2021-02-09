@@ -25,10 +25,19 @@ export default defineComponent({
 
     .seq-track-solo {
 
-        background: blue;
+        background: rgb(30, 30, 35);
+        margin: 5px 5px 5px 2.5px;
+        border-radius: 3px;
+
         display: flex;
         justify-content: center;
         align-items: center;
+
+    }
+    
+    .seq-track-solo > span {
+
+        color: rgb(60, 60, 65);
 
     }
 

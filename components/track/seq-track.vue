@@ -17,7 +17,7 @@ import { defineComponent, computed }    from 'vue'
 import SeqTrackHeader                   from './seq-track-header.vue'
 import SeqTrackMute                     from './seq-track-mute.vue'
 import SeqTrackSolo                     from './seq-track-solo.vue'
-import SeqMultiSequencer                from '../sequencer/seq-multi-sequencer.vue'
+import SeqMultiSequencer                from '../multi-sequencer/seq-multi-sequencer.vue'
 
 export default defineComponent({
 
@@ -25,7 +25,7 @@ export default defineComponent({
     components : { SeqTrackHeader, SeqTrackMute, SeqTrackSolo, SeqMultiSequencer },
     setup(props) {
 
-        const top = computed(() => (32 - props.index - 1) * 6.25 + '%')
+        const top = computed(() => props.index * 6.25 + '%')
 
         return { top }
 
@@ -40,11 +40,10 @@ export default defineComponent({
     .seq-track {
 
         position: absolute;
-        width : 100%;
-        height : 6.25%;
-        background: tomato;
-        box-sizing: border-box;
-        border-bottom: 1px solid rgb(60, 60, 60);
+        width : calc(100% - 4px);
+        height : calc(6.25% - 2px);
+        border: 2px solid rgb(40, 40, 45);
+        background: rgb(50, 50, 55);
 
         display: grid;
         grid-template-columns: 0.06fr 0.03fr 0.03fr 1fr;

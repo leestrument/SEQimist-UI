@@ -1,6 +1,6 @@
 <template>
     
-    <div class="seq-multi-sequencer"></div>
+    <div class="seq-piano-roll-grid"></div>
 
 </template>
 
@@ -18,9 +18,10 @@ export default defineComponent({
 
 <style scoped>
 
-    .seq-multi-sequencer {
+    .seq-piano-roll-grid {
 
-        background: rgb(35, 35, 40);
+        border: 2px solid rgb(40, 40, 45);
+        margin:0 -2px -2px 0;
 
     }
 

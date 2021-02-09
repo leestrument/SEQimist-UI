@@ -3,7 +3,7 @@
     <div class="seq-timeline">
 
         <seq-timeline-loop/>
-        <seq-clip v-for="(e, i) in 16" :key="i" :index="i"/>
+        <seq-clip v-for="(e, i) in 64" :key="i" :index="i"/>
 
     </div>
 

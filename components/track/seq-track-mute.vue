@@ -2,7 +2,7 @@
     
     <div class="seq-track-mute">
 
-        <span v-text="index"></span>
+        <!-- <span v-text="index"></span> -->
 
     </div>
 
@@ -26,9 +26,13 @@ export default defineComponent({
     .seq-track-mute {
 
         background: goldenrod;
+        margin: 5px 2.55px 5px 5px;
+        border-radius: 3px;
+
         display: flex;
         justify-content: center;
         align-items: center;
+        
 
     }
 
