@@ -2,9 +2,9 @@
     
     <div class="seq-inspector">
 
-        <seq-inspector-clip     v-if="inspectorType === 0"/>
-        <seq-inspector-track    v-else-if="inspectorType === 1"/>
-        <seq-inspector-note     v-else-if="inspectorType === 2"/>
+        <seq-inspector-clip     v-if        ="inspectorType === 0"/>
+        <seq-inspector-track    v-else-if   ="inspectorType === 1"/>
+        <seq-inspector-note     v-else-if   ="inspectorType === 2"/>
 
     </div>
 
@@ -47,7 +47,6 @@ export default defineComponent({
         position: relative;
         width : 100%;
         height : 100%;
-        background: rgb(20, 20, 25);
 
     }
 
