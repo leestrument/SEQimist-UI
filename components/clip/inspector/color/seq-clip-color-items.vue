@@ -27,7 +27,6 @@ export default defineComponent({
 
         width : 100%;
         height : 100%;
-        background: rgb(30, 30, 35);
 
         display: grid;
         grid-template-columns: repeat(4, 1fr);

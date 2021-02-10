@@ -25,7 +25,9 @@ export default defineComponent({
 
     .seq-clip-color-panel {
 
-        background: red;
+        position: absolute;
+        width: 100%;
+        height: 100%;
 
     }
 

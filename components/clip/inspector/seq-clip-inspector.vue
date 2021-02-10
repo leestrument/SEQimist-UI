@@ -2,8 +2,9 @@
     
     <div class="seq-clip-inspector">
 
-        <seq-clip-color-panel/>
-        <seq-clip-track-count-panel/>
+        <lee-label-box label="Color"><seq-clip-color-panel/></lee-label-box>
+        <lee-label-box label="Track Count"><seq-clip-track-count-panel/></lee-label-box>
+        
         <seq-clip-scale-panel/>
         <seq-clip-preset-panel/>
 
@@ -14,12 +15,14 @@
 <script lang="ts">
 
 import { defineComponent }      from 'vue'
+
+import LeeLabelBox              from '../../helper/lee-label-box.vue'
 import SeqClipColorPanel        from './color/seq-clip-color-panel.vue'
 import SeqClipPresetPanel       from './preset/seq-clip-preset-panel.vue'
 import SeqClipScalePanel        from './scale/seq-clip-scale-panel.vue'
 import SeqClipTrackCountPanel   from './track-count/seq-clip-track-count-panel.vue'
 
-export default defineComponent({ components : { SeqClipColorPanel, SeqClipTrackCountPanel, SeqClipScalePanel, SeqClipPresetPanel } })
+export default defineComponent({ components : { LeeLabelBox, SeqClipColorPanel, SeqClipTrackCountPanel, SeqClipScalePanel, SeqClipPresetPanel } })
 
 </script>
 
@@ -32,7 +35,7 @@ export default defineComponent({ components : { SeqClipColorPanel, SeqClipTrackC
         height : 100%;
 
         display: grid;
-        grid-template-rows: 0.5fr 0.2fr 1fr 1fr 0.5fr; 
+        grid-template-rows: 1fr 60px 1fr 1fr; 
         gap: 10px;
 
     }
