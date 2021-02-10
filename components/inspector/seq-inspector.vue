@@ -13,7 +13,7 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
-import SeqClipInspector     from '../clip/seq-clip-inspector.vue'
+import SeqClipInspector     from '../clip/inspector/seq-clip-inspector.vue'
 import SeqTrackInspector    from '../track/seq-track-inspector.vue'
 import SeqNoteInspector     from '../note/seq-note-inspector.vue'
 

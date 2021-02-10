@@ -4,7 +4,7 @@
 
         <seq-track 
         
-            v-for="(e, i) in 1" 
+            v-for="(e, i) in 32" 
             :key="e"
             :index="i"
 

@@ -14,10 +14,10 @@
 <script lang="ts">
 
 import { defineComponent }      from 'vue'
-import SeqClipColorPanel        from '../clip-color/seq-clip-color-panel.vue'
-import SeqClipPresetPanel       from '../clip-preset/seq-clip-preset-panel.vue'
-import SeqClipScalePanel        from '../clip-scale/seq-clip-scale-panel.vue'
-import SeqClipTrackCountPanel   from '../clip-track-count/seq-clip-track-count-panel.vue'
+import SeqClipColorPanel        from './color/seq-clip-color-panel.vue'
+import SeqClipPresetPanel       from './preset/seq-clip-preset-panel.vue'
+import SeqClipScalePanel        from './scale/seq-clip-scale-panel.vue'
+import SeqClipTrackCountPanel   from './track-count/seq-clip-track-count-panel.vue'
 
 export default defineComponent({ components : { SeqClipColorPanel, SeqClipTrackCountPanel, SeqClipScalePanel, SeqClipPresetPanel } })
 
