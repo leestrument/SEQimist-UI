@@ -33,4 +33,6 @@ export default defineComponent({
 
   }
 
+  span { user-select: none; }
+
 </style>

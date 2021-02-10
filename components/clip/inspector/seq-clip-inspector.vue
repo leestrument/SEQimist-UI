@@ -30,10 +30,9 @@ export default defineComponent({ components : { LeeLabelBox, SeqClipColorPanel, 
 
     .seq-clip-inspector {
 
-        position: absolute;
-        width : 100%;
-        height : 100%;
-
+        position: relative;
+        width: 100%;
+        height: 100%;
         display: grid;
         grid-template-rows: 1fr 60px 1fr 1fr; 
         gap: 10px;

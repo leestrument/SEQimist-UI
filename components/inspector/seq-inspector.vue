@@ -2,37 +2,40 @@
     
     <div class="seq-inspector">
 
-        <seq-clip-inspector     v-if        ="inspectorType === 0"/>
-        <seq-track-inspector    v-else-if   ="inspectorType === 1"/>
-        <seq-note-inspector     v-else-if   ="inspectorType === 2"/>
+        <lee-tabs :labels="['Clip', 'Track', 'Note']" :selected-tab-index="state.selectedTabIndex" />
+        <div class="seq-current-inspector">
 
+            <component :is="state.currentInspector"></component>
+
+        </div>
+            
     </div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent }  from 'vue'
+import { defineComponent, reactive, computed }  from 'vue'
+import LeeTabs              from '../helper/lee-tabs/lee-tabs.vue'
 import SeqClipInspector     from '../clip/inspector/seq-clip-inspector.vue'
 import SeqTrackInspector    from '../track/seq-track-inspector.vue'
 import SeqNoteInspector     from '../note/seq-note-inspector.vue'
 
-enum InspectorType {
-
-    Clip,
-    Track,
-    Note
-
-}
-
 export default defineComponent({
 
-    components : { SeqClipInspector, SeqTrackInspector, SeqNoteInspector },
+    components : { LeeTabs },
     setup() {
 
-        const inspectorType = InspectorType.Clip 
+        const inspectorItems = [ SeqClipInspector, SeqTrackInspector, SeqNoteInspector ]
 
-        return { inspectorType }
+        const state = reactive({
+
+            selectedTabIndex : 0,
+            currentInspector : computed(() => inspectorItems[state.selectedTabIndex])
+
+        })
+
+        return { state }
 
     }
 
@@ -44,10 +47,20 @@ export default defineComponent({
 
     .seq-inspector {
 
-        position: relative;
+        position: absolute;
         width : 100%;
         height : 100%;
+        border-radius: 10px;
+        background: rgb(30, 30, 35);
+        display: grid;
+        grid-template-rows: 40px 1fr;
 
+    }
+
+    .seq-current-inspector { 
+        
+        padding: 6px 10px 10px 10px; 
+    
     }
 
 </style>

@@ -44,7 +44,7 @@ export default defineComponent({
 
     .lee-label-box-label {
 
-        background: rgb(30, 30, 35);
+        background: rgb(40, 40, 45);
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         display: flex;

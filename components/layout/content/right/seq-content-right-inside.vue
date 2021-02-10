@@ -1,19 +1,19 @@
 <template>
     
     <div class="seq-content-right-inside">
-        <seq-content-right-inside-top/>
-        <seq-content-right-inside-bottom/>
+
+        <seq-inspector/>
+
     </div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent }          from 'vue'
-import SeqContentRightInsideTop     from './seq-content-right-inside-top.vue'
-import SeqContentRightInsideBottom  from './seq-content-right-inside-bottom.vue'
+import { defineComponent }  from 'vue'
+import SeqInspector from '../../../inspector/seq-inspector.vue'
 
-export default defineComponent({ components : { SeqContentRightInsideTop, SeqContentRightInsideBottom } })
+export default defineComponent({ components : { SeqInspector } })
 
 </script>
 
@@ -24,9 +24,7 @@ export default defineComponent({ components : { SeqContentRightInsideTop, SeqCon
         position: relative;
         width: 100%;
         height: 100%;
-        display: grid;
-        grid-template-rows: 0.065fr 1fr;        
-
+    
     }
 
 </style>
