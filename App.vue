@@ -7,13 +7,9 @@
 <script lang="ts">
 
 import { defineComponent } from "vue"
-import Seq from './components/layout/seq.vue'
+import Seq from './components/seq.vue'
 
-export default defineComponent({
-
-  components : { Seq },
-  
-})
+export default defineComponent({ components : { Seq } })
 
 </script>
 
