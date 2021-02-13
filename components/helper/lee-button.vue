@@ -71,8 +71,7 @@ export default defineComponent({
     .lee-button-pressed {
 
         box-shadow: inset 1px 1px 2px rgb(20, 20, 20), inset -1px -1px 2px rgb(50, 50, 50);
-        background: rgb(30, 30, 35);
-        fill: rgb(150, 150, 150);
+        fill: rgb(130, 130, 130);
 
     }
 

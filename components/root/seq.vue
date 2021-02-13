@@ -5,6 +5,7 @@
         <seq-header/>
         <seq-nav/>
         <seq-content/>
+        <seq-info v-if="false"/>
 
     </div>
 
@@ -16,9 +17,9 @@ import { defineComponent }  from 'vue'
 import SeqHeader            from '../layout/header/seq-header.vue'
 import SeqNav               from '../layout/nav/seq-nav.vue'
 import SeqContent           from '../layout/content/seq-content.vue'
+import SeqInfo              from '../info/seq-info.vue'
 
-export default defineComponent({ components : { SeqHeader, SeqNav, SeqContent } })
-
+export default defineComponent({ components : { SeqHeader, SeqNav, SeqContent, SeqInfo } })
 
 </script>
 

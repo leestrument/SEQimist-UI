@@ -1,16 +1,27 @@
 <template>
     
-    <div class="seq-timeline"></div>
+    <div class="seq-timeline">
+
+        <seq-timeline-loop/>
+        <seq-clip v-for="(e, i) in 12" :key="i" :index="i"/>
+
+    </div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent }  from 'vue'
+import SeqTimelineLoop      from './seq-timeline-loop.vue'
+import SeqClip              from '../clip/seq-clip.vue'
 
 export default defineComponent({
 
-    components : {}
+    components : { SeqClip, SeqTimelineLoop },
+    setup() {
+
+
+    }
 
 })
 
@@ -23,7 +34,21 @@ export default defineComponent({
         position: relative;
         width : 100%;
         height : 100%;
-        background: rgb(60, 60, 70);
+        overflow: overlay;
+
+    }
+
+    .seq-timeline::-webkit-scrollbar {
+
+        width: 1vw;
+        height: 8px;
+
+    }
+
+    .seq-timeline::-webkit-scrollbar-thumb {
+
+        background-color: rgb(150, 150, 150);
+        border-radius: 100px;
 
     }
 
