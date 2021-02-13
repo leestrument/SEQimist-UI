@@ -1,6 +1,6 @@
 <template>
     
-    <div class="class-name"></div>
+    <div class="seq-content-right seq-hole"></div>
 
 </template>
 
@@ -18,11 +18,8 @@ export default defineComponent({
 
 <style scoped>
 
-    .class-name {
+    .seq-content-right {
 
-        width : 100%;
-        height : 100%;
-        background: rgb(30, 30, 35);
 
     }
 

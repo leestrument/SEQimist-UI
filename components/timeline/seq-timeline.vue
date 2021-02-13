@@ -1,6 +1,6 @@
 <template>
     
-    <div class="class-name"></div>
+    <div class="seq-timeline"></div>
 
 </template>
 
@@ -18,11 +18,12 @@ export default defineComponent({
 
 <style scoped>
 
-    .class-name {
+    .seq-timeline {
 
+        position: relative;
         width : 100%;
         height : 100%;
-        background: rgb(30, 30, 35);
+        background: rgb(60, 60, 70);
 
     }
 

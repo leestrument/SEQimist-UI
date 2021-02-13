@@ -1,6 +1,10 @@
 <template>
     
-    <div class="class-name"></div>
+    <div class="lee-toggle">
+
+        <slot> <!-- Drop SVG here! --></slot>
+
+    </div>
 
 </template>
 
@@ -18,12 +22,6 @@ export default defineComponent({
 
 <style scoped>
 
-    .class-name {
+    /* .lee-toggle { background: rgb(30, 30, 35); } */
 
-        width : 100%;
-        height : 100%;
-        background: rgb(30, 30, 35);
-
-    }
-
-</style>
+</style> 
