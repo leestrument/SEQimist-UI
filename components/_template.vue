@@ -1,6 +1,6 @@
 <template>
     
-    <div class="seq-header-left"></div>
+    <div class="class-name"></div>
 
 </template>
 
@@ -18,13 +18,11 @@ export default defineComponent({
 
 <style scoped>
 
-    .seq-header-left {
+    .class-name {
 
-        position: absolute;
-        left: 0;
-        width : var(--seq-css-header-logo-width);
+        width : 100%;
         height : 100%;
-        background: var(--seq-css-header-background);
+        background: rgb(30, 30, 35)
 
     }
 
