@@ -2,7 +2,7 @@
     
     <div class="seq-track-multi-sequencer">
 
-        <seq-step-sequencer/>
+        <seq-step-sequencer :color="color"/>
 
     </div>
 
@@ -15,6 +15,7 @@ import SeqStepSequencer     from '../step-sequencer/seq-step-sequencer.vue'
 
 export default defineComponent({
 
+    props : { color : { type : String, required : true } },
     components : { SeqStepSequencer }
 
 })

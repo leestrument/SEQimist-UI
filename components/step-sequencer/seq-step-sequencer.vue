@@ -2,7 +2,7 @@
     
     <div class="seq-step-sequencer">
 
-        <seq-step-box v-for="e in stepCount" :key="e"/>
+        <seq-step-box v-for="e in stepCount" :key="e" :color="color"/>
 
     </div>
 
@@ -15,10 +15,11 @@ import SeqStepBox from './seq-step-box.vue'
 
 export default defineComponent({
 
+    props : { color : { type : String, required : true } },
     components : { SeqStepBox },
     setup() {
 
-        const stepCount = Math.floor(Math.random() * 16) + 1
+        const stepCount = Math.floor(Math.random() * 32) + 1
 
         return { stepCount }
 
@@ -35,7 +36,6 @@ export default defineComponent({
         position: absolute;
         width : 100%;
         height : 100%;
-
         display: grid;
         grid-auto-flow: column;
 

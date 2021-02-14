@@ -1,16 +1,29 @@
 <template>
     
-    <div class="seq-step-slot"></div>
+    <div class="seq-step-slot">
+
+        <seq-step v-if="hasStep" :color="color"/>
+
+    </div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent }  from 'vue'
+import SeqStep              from './seq-step.vue'
 
 export default defineComponent({
 
-    components : {}
+    props : { color : { type : String, required : true } },
+    components : { SeqStep },
+    setup() {
+
+        const hasStep = Math.random() > 0.5
+
+        return { hasStep }
+
+    }
 
 })
 
@@ -23,8 +36,9 @@ export default defineComponent({
         position: relative;
         width: 100%;
         height: 100%;
-        background: black;
-        border-radius: 2px;
+        background: rgb(20, 20, 20);
+        border-radius: 5px;
+        box-shadow: inset 1px 1px 2px black, inset -1px -1px 2px rgb(100, 100, 100);
 
     }
 

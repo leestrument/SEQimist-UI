@@ -2,22 +2,7 @@
     
     <div class="seq-editor">
 
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
-        <seq-track/>
+        <seq-track v-for="e in trackCount" :key="e"/>
 
     </div>
 
@@ -28,7 +13,18 @@
 import { defineComponent }  from 'vue'
 import SeqTrack             from '../track/seq-track.vue'
 
-export default defineComponent({ components : { SeqTrack } })
+export default defineComponent({ 
+    
+    components : { SeqTrack },
+    setup() {
+
+        const trackCount = 8
+
+        return { trackCount }
+
+    } 
+
+})
 
 </script>
 
@@ -41,7 +37,7 @@ export default defineComponent({ components : { SeqTrack } })
 
         display: grid;
         grid-auto-flow: rows;
-        gap: 4px;
+        gap: 1px;
 
     }
 

@@ -1,10 +1,10 @@
 <template>
     
     <div class="seq-track">
-        <seq-track-header/>
+        <seq-track-header :color="color"/>
         <seq-track-mute/>
         <seq-track-solo/>
-        <seq-track-multi-sequencer/>
+        <seq-track-multi-sequencer :color="color"/>
     </div>
 
 </template>
@@ -17,7 +17,18 @@ import SeqTrackMute             from './seq-track-mute.vue'
 import SeqTrackSolo             from './seq-track-solo.vue'
 import SeqTrackMultiSequencer   from './seq-track-multi-sequencer.vue'
 
-export default defineComponent({ components : { SeqTrackHeader, SeqTrackMute, SeqTrackSolo, SeqTrackMultiSequencer } })
+export default defineComponent({ 
+    
+    components : { SeqTrackHeader, SeqTrackMute, SeqTrackSolo, SeqTrackMultiSequencer },
+    setup() {
+
+        const color = `hsl(${Math.floor(Math.random() * 360)}, 60%, 50%)`
+
+        return { color }
+
+    } 
+
+})
 
 </script>
 
@@ -30,7 +41,7 @@ export default defineComponent({ components : { SeqTrackHeader, SeqTrackMute, Se
 
         display: grid;
         grid-template-columns: var(--track-column-ratio);
-        gap: 4px;
+        gap: 1px;
 
     }
 

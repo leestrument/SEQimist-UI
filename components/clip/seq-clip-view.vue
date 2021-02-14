@@ -30,7 +30,7 @@ export default defineComponent({ components : { SeqClipColorIndicator, SeqClipEd
         height : 100%;
         display: grid;
         grid-template-columns: var(--clip-view-column-ratio);
-        gap: 4px;
+        gap: 1px;
 
     }
 

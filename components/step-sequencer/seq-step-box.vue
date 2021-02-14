@@ -2,7 +2,7 @@
     
     <div class="seq-step-box">
 
-        <seq-step-slot/>
+        <seq-step-slot :color="color"/>
 
     </div>
 
@@ -15,6 +15,7 @@ import SeqStepSlot from './seq-step-slot.vue'
 
 export default defineComponent({
 
+    props : { color : { type : String, required : true } },
     components : {SeqStepSlot}
 
 })
