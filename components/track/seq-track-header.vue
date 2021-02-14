@@ -36,7 +36,7 @@ export default defineComponent({
         width: 100%;
         height: 100%;
         border-radius: 4px;
-        box-shadow: inset 2px 2px 4px rgb(200, 200, 200), inset -2px -2px 2px rgb(50, 50, 50);
+        /* box-shadow: inset 2px 2px 4px rgb(200, 200, 200), inset -2px -2px 2px rgb(50, 50, 50); */
 
     }
 

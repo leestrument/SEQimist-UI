@@ -40,7 +40,8 @@ export default defineComponent({
         background: rgb(67, 82, 162);
         border-radius: 10px;
         box-sizing: border-box;
-        box-shadow: inset 1px 1px 2px rgb(200, 200, 200), inset -1px -1px 2px black;
+        border: 1px solid rgb(20, 20, 20);
+        /* box-shadow: inset 1px 1px 2px rgb(150, 150, 150), inset -1px -1px 1px black; */
 
     }
 

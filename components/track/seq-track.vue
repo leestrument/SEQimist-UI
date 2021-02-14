@@ -1,6 +1,11 @@
 <template>
     
-    <div class="seq-track">
+    <div 
+    
+        class="seq-track"
+        :style="isSelected ? { border : `1px solid ${color}`} : null"
+    
+    >
         <seq-track-header :color="color"/>
         <seq-track-mute/>
         <seq-track-solo/>
@@ -23,8 +28,9 @@ export default defineComponent({
     setup() {
 
         const color = `hsl(${Math.floor(Math.random() * 360)}, 60%, 50%)`
+        const isSelected = Math.random() > 0.5
 
-        return { color }
+        return { color, isSelected }
 
     } 
 
@@ -42,6 +48,9 @@ export default defineComponent({
         display: grid;
         grid-template-columns: var(--track-column-ratio);
         gap: 1px;
+
+        box-sizing: border-box;
+        /* border: 10px solid white; */
 
     }
 

@@ -1,8 +1,20 @@
+// I pasted same code from lee-button, you should re-create this component from scratch!
+
 <template>
     
-    <div class="lee-toggle">
+    <div 
+    
+        class="lee-button"
+        :class="state.className"
+        @mousedown="blink"
+    
+    >   
 
-        <slot> <!-- Drop SVG here! --></slot>
+        <div class="lee-svg-wrapper">
+
+            <slot> <!-- Drop SVG here! --></slot>
+
+        </div>
 
     </div>
 
@@ -10,11 +22,24 @@
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent, reactive, computed } from 'vue'
 
 export default defineComponent({
 
-    components : {}
+    setup() {
+
+        const state = reactive({
+
+            isPressed : false,
+            className : computed(() => state.isPressed ? 'lee-button-pressed' : 'lee-button-released')
+
+        })
+
+        const blink = (): void => { state.isPressed = true; setTimeout(() => state.isPressed = false, 100) }
+
+        return { state, blink }
+
+    }
 
 })
 
@@ -22,6 +47,34 @@ export default defineComponent({
 
 <style scoped>
 
-    /* .lee-toggle { background: rgb(30, 30, 35); } */
+    .lee-button { 
+        
+        position: relative;
+        border-radius: 4px;
+        padding: 4px;
+    
+    }
+
+    .lee-svg-wrapper{
+
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .lee-button-released {
+
+        /* box-shadow: -1px -1px 2px rgb(100, 100, 100), 2px 2px 2px rgb(10, 10, 10); */
+        fill: rgb(60, 60, 60);
+
+    }
+
+    .lee-button-pressed {
+
+        /* box-shadow: inset 1px 1px 2px rgb(20, 20, 20), inset -1px -1px 2px rgb(50, 50, 50); */
+        fill: rgb(130, 130, 130);
+
+    }
 
 </style> 

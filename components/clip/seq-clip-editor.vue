@@ -18,7 +18,7 @@ export default defineComponent({
     components : { SeqTrack },
     setup() {
 
-        const trackCount = 8
+        const trackCount = 16
 
         return { trackCount }
 
@@ -37,7 +37,7 @@ export default defineComponent({
 
         display: grid;
         grid-auto-flow: rows;
-        gap: 1px;
+        gap: 2px;
 
     }
 

@@ -3,6 +3,7 @@
     <div class="seq-browser child-is-center">
 
         <span>Preset 01 - Beatiful Chords</span>
+        <seq-browser-pop-up v-if="false"/>
 
     </div>
 
@@ -10,11 +11,12 @@
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent }  from 'vue'
+import SeqBrowserPopUp      from './seq-browser-pop-up.vue'
 
 export default defineComponent({
 
-    components : {}
+    components : { SeqBrowserPopUp }
 
 })
 

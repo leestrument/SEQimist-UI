@@ -2,7 +2,8 @@
     
     <div class="seq-track-multi-sequencer">
 
-        <seq-step-sequencer :color="color"/>
+        <seq-piano-roll     v-if="isPianoRoll"  :color="color"/>
+        <seq-step-sequencer v-else              :color="color"/>
 
     </div>
 
@@ -11,12 +12,21 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
+import SeqPianoRoll         from '../piano-roll/seq-piano-roll.vue'
 import SeqStepSequencer     from '../step-sequencer/seq-step-sequencer.vue'
 
 export default defineComponent({
 
     props : { color : { type : String, required : true } },
-    components : { SeqStepSequencer }
+    components : { SeqPianoRoll, SeqStepSequencer },
+    setup() {
+
+        const isPianoRoll = Math.random() > 0.5
+
+        return { isPianoRoll }
+
+
+    }
 
 })
 

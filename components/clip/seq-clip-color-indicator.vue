@@ -23,7 +23,6 @@ export default defineComponent({
         background: rgb(162, 125, 33);
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
-        
 
     }
 

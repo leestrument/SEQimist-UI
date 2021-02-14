@@ -1,6 +1,6 @@
 <template>
     
-    <div class="seq-tool"></div>
+    <div class="seq-piano-roll-grid-item"></div>
 
 </template>
 
@@ -18,9 +18,10 @@ export default defineComponent({
 
 <style scoped>
 
-    .seq-tool {
+    .seq-piano-roll-grid-item {
 
-        background: tomato;
+        /* background: rgb(30, 30, 35); */
+        border-right: 2px solid rgb(20, 20, 20);
 
     }
 
