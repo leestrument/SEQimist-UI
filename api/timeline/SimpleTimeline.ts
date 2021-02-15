@@ -1,5 +1,3 @@
-/* This class needs a lot of refactoring */
-
 import { MidiClip } from '../clip/MidiClip'
 
 export class SimpleTimeline {
@@ -8,6 +6,7 @@ export class SimpleTimeline {
 
         private _clips                      = Array.from({ length: 1 }, () => new MidiClip), 
         private _lastSelectedClipIndex      = 0,
+        private _multipleClipsAreSelected   = false
 
     ){}
 
@@ -20,6 +19,8 @@ export class SimpleTimeline {
         this.unselectOtherClips(lastClipIndex)
         this._lastSelectedClipIndex = lastClipIndex
 
+        this.updateMultipleClipsAreSelected()
+
     }
     public selectSingleClip(clipIndex: number): void {
 
@@ -28,13 +29,17 @@ export class SimpleTimeline {
         this.unselectOtherClips(clipIndex)
         this._lastSelectedClipIndex = clipIndex
 
+        this.updateMultipleClipsAreSelected()
+
     }
     public selectAnotherClip(clipIndex: number): void {
 
-        if (this.multipleClipsAreSelected()) this._clips[clipIndex].toggle()
+        if (this._multipleClipsAreSelected) this._clips[clipIndex].toggle()
         else this._clips[clipIndex].select()
 
         this._lastSelectedClipIndex = clipIndex
+
+        this.updateMultipleClipsAreSelected()
 
     }
     public selectMultipleClipsByRange(clipIndex: number): void {
@@ -49,10 +54,14 @@ export class SimpleTimeline {
 
         })
 
+        this.updateMultipleClipsAreSelected()
+
     }
     public selectAllClips(): void { 
         
         this._clips.forEach(clip => clip.select()) 
+
+        this.updateMultipleClipsAreSelected()
     
     }    
     public removeSelectedClips(): void {
@@ -83,6 +92,8 @@ export class SimpleTimeline {
 
         }
 
+        this.updateMultipleClipsAreSelected()
+
     }
     public setSelectedClipsColor(color: string): void { 
         
@@ -107,7 +118,12 @@ export class SimpleTimeline {
         return this._clips 
     
     }
-    public multipleClipsAreSelected(): boolean { 
+    public multipleClipsAreSelected(): boolean {
+
+        return this._multipleClipsAreSelected
+
+    }
+    private updateMultipleClipsAreSelected(): void { 
         
         let counter = 0 
 
@@ -117,10 +133,9 @@ export class SimpleTimeline {
         
         })
 
-        return counter > 1 
+        this._multipleClipsAreSelected = counter > 1  
     
     }
-
     private unselectOtherClips (clipIndexToExclude: number): void { 
         
         this._clips.forEach((clip, clipIndex) => { 
