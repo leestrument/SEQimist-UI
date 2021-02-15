@@ -42,8 +42,6 @@ const seqEventHandler = (seq:SEQimist, e): void => {
 
     }
 
-    console.log(e.shiftKey)
-
 }
 
 export default seqEventHandler

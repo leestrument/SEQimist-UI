@@ -4,51 +4,43 @@ import { MidiClip } from '../clip/MidiClip'
 
 export class SimpleTimeline {
 
-    private _lastSelectedClip : MidiClip
-
     constructor(
 
         private _clips                      = Array.from({ length: 1 }, () => new MidiClip), 
         private _lastSelectedClipIndex      = 0,
-        private _multipleClipsAreSelected   = false,
 
-    ){ this._lastSelectedClip = this._clips[this._lastSelectedClipIndex] }
+    ){}
 
-    public addClip                              ()                              : void {
+    public addClip(): void {
 
         this._clips.push(new MidiClip)
 
-        const lastClipIndex = this.getClipCount() - 1
+        const lastClipIndex = this._clips.length - 1
 
         this.unselectOtherClips(lastClipIndex)
         this._lastSelectedClipIndex = lastClipIndex
-        this._multipleClipsAreSelected = false
-        this._lastSelectedClip = this._clips[this._lastSelectedClipIndex]
 
     }
-    public selectSingleClip                     (clipIndex: number)             : void {
+    public selectSingleClip(clipIndex: number): void {
 
         this._clips[clipIndex].select()
 
         this.unselectOtherClips(clipIndex)
         this._lastSelectedClipIndex = clipIndex
-        this._multipleClipsAreSelected = false
-        this._lastSelectedClip = this._clips[this._lastSelectedClipIndex]
 
     }
-    public selectAnotherClip                    (clipIndex: number)             : void {
+    public selectAnotherClip(clipIndex: number): void {
 
-        if (this._multipleClipsAreSelected) this._clips[clipIndex].toggle()
+        if (this.multipleClipsAreSelected()) this._clips[clipIndex].toggle()
         else this._clips[clipIndex].select()
 
         this._lastSelectedClipIndex = clipIndex
-        this.updateMultipleClipsAreSelected()
 
     }
-    public selectMultipleClipsByRange           (clipIndex: number)             : void {
+    public selectMultipleClipsByRange(clipIndex: number): void {
 
-        const startIndex = Math.min(this._lastSelectedClipIndex, clipIndex)
-        const endIndex = Math.max(this._lastSelectedClipIndex, clipIndex)
+        const startIndex    = Math.min(this._lastSelectedClipIndex, clipIndex)
+        const endIndex      = Math.max(this._lastSelectedClipIndex, clipIndex)
 
         this._clips.forEach((clip, clipIndex) => {
 
@@ -57,39 +49,101 @@ export class SimpleTimeline {
 
         })
 
-        this.updateMultipleClipsAreSelected()
+    }
+    public selectAllClips(): void { 
+        
+        this._clips.forEach(clip => clip.select()) 
+    
+    }    
+    public removeSelectedClips(): void {
+
+        // store first selected clip index before removing elements.
+        const firstClipIndex = this.getSelectedClipIndexFromBegin()
+
+        // remove elements.
+        let i = this._clips.length 
+
+        while (i--) {
+
+            if (this._clips[i].isSelected()) this._clips.splice(i, 1)
+
+        }
+
+        // select other clip
+        const len = this._clips.length
+        
+        if (len > 0) {
+
+            let clipIndex = firstClipIndex
+
+            if (firstClipIndex === len) clipIndex = firstClipIndex - 1
+            
+            this._clips[clipIndex].select()
+            this._lastSelectedClipIndex = clipIndex
+
+        }
 
     }
-    public selectAllClips                       ()                              : void {
+    public setSelectedClipsColor(color: string): void { 
+        
+        this._clips.forEach(clip => { 
+            
+            if (clip.isSelected()) clip.setColor(color) 
+        
+        }) 
 
-        this._clips.forEach(clip => clip.select())
-        this._multipleClipsAreSelected = true
-
-    }
-    public removeSelectedClips                  ()                              : void {}
-    public setSelectedClipsColor                (color: string)                 : void { this._clips.forEach(clip => { if (clip.isSelected()) clip.setColor(color) }) }    
-    public setSelectedClipsVisibleTrackCount    (trackCount: number)            : void { this._clips.forEach(clip => { if (clip.isSelected()) clip.setVisibleTrackCount(trackCount) }) }
-
-    public getClipCount                         ()                              : number        { return this._clips.length }
-    public getClips                             ()                              : MidiClip[]    { return this._clips }    
-    public getClip                              (clipIndex: number)             : MidiClip      { return this._clips[clipIndex] }
-    public getLastSelectedClip                  ()                              : MidiClip      { return this._lastSelectedClip }    
-    public multipleClipsAreSelected             ()                              : boolean       { return this._multipleClipsAreSelected }
-    public getCurrentTrackCount                 ()                              : number        { return this._lastSelectedClip.getVisibleTrackCount() }
-
-    private unselectOtherClips                  (clipIndexToExclude: number)    : void { this._clips.forEach((clip, clipIndex) => { if (clipIndex !== clipIndexToExclude) clip.deselect() }) }
-    private updateMultipleClipsAreSelected      ()                              : void {
-
-        let counter = 0
-        let state   = false
-
-        this._clips.forEach(clip => { if (clip.isSelected()) counter++ })
-
-        if (counter > 1) state = true
-
-        this._multipleClipsAreSelected = state
+    }  
+    public setSelectedClipsVisibleTrackCount(trackCount: number): void { 
+        
+        this._clips.forEach(clip => { 
+            
+            if (clip.isSelected()) clip.setVisibleTrackCount(trackCount) 
+        
+        }) 
 
     }
-    private updateLastSelectedClip()                                            : void { this._lastSelectedClip = this._clips[this._lastSelectedClipIndex] }
+    public getClips(): MidiClip[] { 
+        
+        return this._clips 
+    
+    }
+    public multipleClipsAreSelected(): boolean { 
+        
+        let counter = 0 
+
+        this._clips.forEach(clip => { 
+            
+            if (clip.isSelected()) counter++ 
+        
+        })
+
+        return counter > 1 
+    
+    }
+
+    private unselectOtherClips (clipIndexToExclude: number): void { 
+        
+        this._clips.forEach((clip, clipIndex) => { 
+            
+            if (clipIndex !== clipIndexToExclude) clip.deselect() 
+        
+        }) 
+
+    }
+    private getSelectedClipIndexFromBegin(): number {
+
+        let clipIndex = 0
+
+        this._clips.some((clip, index) => {
+
+            if (clip.isSelected()) clipIndex = index
+
+            return clip.isSelected()
+
+        })
+
+        return clipIndex
+
+    }
 
 }
