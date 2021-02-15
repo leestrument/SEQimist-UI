@@ -2,8 +2,10 @@
     
     <div 
     
-        class="seq-clip"
-        :style="{ left : left, background : color }"
+        class       ="seq-clip"
+        :style      ="{ left : clipStart, background : color }"
+        :class      ="clipClassName"
+        :id         ="clipId"
     
     ></div>
 
@@ -11,17 +13,27 @@
 
 <script lang="ts">
 
-import { defineComponent, computed } from 'vue'
+import { defineComponent, computed, onRenderTracked }   from 'vue'
 
 export default defineComponent({
 
-    props : { index : { type : Number, required : true }},
+    props : { 
+        
+        index       : { type : Number,  required : true },
+        color       : { type : String,  required : true },
+        isSelected  : { type : Boolean, required : true },
+    
+    },
+
     setup(props) {
 
-        const left  = computed(() => props.index * 6.25 + '%')
-        const color = `hsl(${Math.floor(Math.random() * 360)}, 50%, 40%)`
+        const clipStart     = computed(() => props.index * 6.25 + '%')
+        const clipClassName = computed(() => props.isSelected ? 'selected' : 'deselected')
+        const clipId        = computed(() => 'clip-id-' + props.index)
 
-        return { left, color }
+        // onRenderTracked(() => console.log('rendered!'))
+
+        return { clipStart,  clipClassName, clipId }
 
     }
 
@@ -44,5 +56,8 @@ export default defineComponent({
         /* box-shadow: inset 1px 1px 2px rgb(150, 150, 150), inset -1px -1px 1px black; */
 
     }
+
+    .seq-clip.selected      { border: 4px solid rgb(150, 150, 150);}
+    .seq-clip.deselected    { border: 1px solid rgb(20, 20, 20);}
 
 </style>

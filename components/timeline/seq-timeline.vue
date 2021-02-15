@@ -3,7 +3,15 @@
     <div class="seq-timeline">
 
         <seq-timeline-loop/>
-        <seq-clip v-for="(e, i) in 20" :key="i" :index="i"/>
+        <seq-clip 
+        
+            v-for           ="(clip, i) in clips" 
+            :key            ="i" 
+            :index          ="i"
+            :color          ="clip.getColor()"
+            :is-selected    ="clip.isSelected()"
+        
+        />
 
     </div>
 
@@ -12,6 +20,7 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
+import { useStore }         from 'vuex'
 import SeqTimelineLoop      from './seq-timeline-loop.vue'
 import SeqClip              from '../clip/seq-clip.vue'
 
@@ -20,6 +29,10 @@ export default defineComponent({
     components : { SeqClip, SeqTimelineLoop },
     setup() {
 
+        const store = useStore()
+        const clips = store.getters.getClips
+
+        return { clips }
 
     }
 

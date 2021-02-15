@@ -3,14 +3,14 @@
     <div class="seq-timeline-menu">
 
         <!-- Add clip -->
-        <lee-button>
+        <lee-button id="add-clip">
             
             <svg-plus/>
         
         </lee-button>
 
         <!-- Remove clip -->
-        <lee-button>
+        <lee-button id="remove-clip">
             
             <svg-trash-can/>
     
