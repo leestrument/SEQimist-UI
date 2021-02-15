@@ -1,9 +1,9 @@
 <template>
     
-    <div class="seq-browser child-is-center">
+    <div class="seq-browser child-is-center" @mousedown="mouseDown">
 
         <span>Preset 01 - Beatiful Chords</span>
-        <seq-browser-pop-up v-if="false"/>
+        <seq-browser-pop-up v-if="isOpen"/>
 
     </div>
 
@@ -11,12 +11,25 @@
 
 <script lang="ts">
 
-import { defineComponent }  from 'vue'
+import { defineComponent, ref }  from 'vue'
 import SeqBrowserPopUp      from './seq-browser-pop-up.vue'
 
 export default defineComponent({
 
-    components : { SeqBrowserPopUp }
+    components : { SeqBrowserPopUp },
+    setup() {
+
+        const isOpen = ref(false)
+        const mouseDown = (): void => {
+
+            isOpen.value = !isOpen.value
+
+        }
+
+
+        return { isOpen, mouseDown }
+
+    }
 
 })
 
