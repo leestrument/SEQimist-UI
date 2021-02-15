@@ -2,7 +2,8 @@
     
     <div class="seq-content-left-inside seq-display">
 
-        <seq-clip-view/>
+        <seq-clip-view-multiple v-if="multipleClipsAreSelected"/>
+        <seq-clip-view v-else/>
 
     </div>
 
@@ -10,10 +11,24 @@
 
 <script lang="ts">
 
-import { defineComponent }  from 'vue'
-import SeqClipView          from '../../clip/seq-clip-view.vue'
+import { defineComponent, computed }    from 'vue'
+import { useStore }                     from 'vuex'
+import SeqClipViewMultiple              from '../../clip/seq-clip-view-multiple.vue'
+import SeqClipView                      from '../../clip/seq-clip-view.vue'
 
-export default defineComponent({ components : { SeqClipView } })
+export default defineComponent({ 
+    
+    components : { SeqClipViewMultiple, SeqClipView },
+    setup() {
+
+        const store = useStore()
+        const multipleClipsAreSelected = computed(() => store.getters.multipleClipsAreSelected)
+
+        return { multipleClipsAreSelected }
+
+    }
+
+})
 
 </script>
 
