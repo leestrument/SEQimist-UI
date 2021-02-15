@@ -5,7 +5,7 @@ export class MidiClip extends BaseClip {
 
     constructor(
 
-        private _visibleTrackCount  = 16,
+        private _visibleTrackCount  = Math.floor(Math.random() * 16) + 1,
         private _tracks             = Array.from({length : 64}, () => new MultiSequencerTrack)
 
     ){ super() }

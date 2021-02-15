@@ -2,7 +2,13 @@
     
     <div class="seq-editor">
 
-        <seq-track v-for="e in trackCount" :key="e"/>
+        <seq-track 
+        
+            v-for="(e, i) in trackCount" 
+            :key="i"
+            :index="i"
+        
+        />
 
     </div>
 
@@ -10,15 +16,17 @@
 
 <script lang="ts">
 
-import { defineComponent }  from 'vue'
-import SeqTrack             from '../track/seq-track.vue'
+import { defineComponent, computed }    from 'vue'
+import { useStore }                     from 'vuex'
+import SeqTrack                         from '../track/seq-track.vue'
 
 export default defineComponent({ 
     
     components : { SeqTrack },
     setup() {
 
-        const trackCount = 16
+        const store         = useStore()
+        const trackCount    = computed(() => store.getters.getTrackCount)
 
         return { trackCount }
 
@@ -33,7 +41,7 @@ export default defineComponent({
     .seq-editor {
 
         background: rgb(15, 15, 15);
-        /* box-shadow: inset 2px 2px 4px black, inset -2px -2px 4px rgb(63, 63, 63); */
+        box-shadow: inset 2px 2px 4px black, inset -2px -2px 4px rgb(63, 63, 63);
 
         display: grid;
         grid-auto-flow: rows;

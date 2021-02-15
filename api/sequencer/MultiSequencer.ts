@@ -7,7 +7,7 @@ export class MultiSequencer {
 
     constructor(
 
-        private _type               = SequencerType.PianoRoll,
+        private _type               = Math.random() > 0.5 ? SequencerType.PianoRoll : SequencerType.StepSequencer,
         private _pianoRoll          = new PianoRoll,
         private _stepSequencer      = new StepSequencer
 
@@ -17,5 +17,6 @@ export class MultiSequencer {
     public getType          ()                      : SequencerType { return this._type }
     public getPianoRoll     ()                      : PianoRoll     { return this._pianoRoll }
     public getStepSequencer ()                      : StepSequencer { return this._stepSequencer }
+    public hasPianoRoll     ()                      : boolean       { return this._type === SequencerType.PianoRoll }
  
 }

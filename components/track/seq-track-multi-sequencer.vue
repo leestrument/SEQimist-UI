@@ -2,8 +2,8 @@
     
     <div class="seq-track-multi-sequencer">
 
-        <seq-piano-roll     v-if="isPianoRoll"  :color="color"/>
-        <seq-step-sequencer v-else              :color="color"/>
+        <seq-piano-roll     v-if="hasPianoRoll"  :color="color"/>
+        <seq-step-sequencer v-else               :color="color"/>
 
     </div>
 
@@ -11,20 +11,26 @@
 
 <script lang="ts">
 
-import { defineComponent }  from 'vue'
-import SeqPianoRoll         from '../piano-roll/seq-piano-roll.vue'
-import SeqStepSequencer     from '../step-sequencer/seq-step-sequencer.vue'
+import { defineComponent, computed }    from 'vue'
+import { useStore }                     from 'vuex'
+import SeqPianoRoll                     from '../piano-roll/seq-piano-roll.vue'
+import SeqStepSequencer                 from '../step-sequencer/seq-step-sequencer.vue'
 
 export default defineComponent({
 
-    props : { color : { type : String, required : true } },
+    props : { 
+        
+        index : { type : Number, required : true },
+        color : { type : String, required : true } 
+
+    },
     components : { SeqPianoRoll, SeqStepSequencer },
-    setup() {
+    setup(props) {
 
-        const isPianoRoll = Math.random() > 0.5
+        const store = useStore()
+        const hasPianoRoll = computed(() => store.getters.hasPianoRoll(props.index))
 
-        return { isPianoRoll }
-
+        return { hasPianoRoll }
 
     }
 

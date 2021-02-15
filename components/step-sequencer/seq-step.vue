@@ -37,7 +37,7 @@ export default defineComponent({
         width : 100%;
         height : 100%;
         border-radius: 5px;
-        box-shadow: inset 1px 1px 2px rgb(150, 150, 150), inset -1px -1px 2px black;
+        /* box-shadow: inset 1px 1px 2px rgb(150, 150, 150), inset -1px -1px 2px black; */
 
         display: grid;
         grid-auto-flow: column;

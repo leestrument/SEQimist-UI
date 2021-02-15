@@ -38,7 +38,7 @@ export default defineComponent({
         height: 100%;
         background: rgb(20, 20, 20);
         border-radius: 5px;
-        box-shadow: inset 1px 1px 2px black, inset -1px -1px 2px rgb(100, 100, 100);
+        /* box-shadow: inset 1px 1px 2px black, inset -1px -1px 2px rgb(100, 100, 100); */
 
     }
 

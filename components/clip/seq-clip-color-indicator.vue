@@ -1,16 +1,28 @@
 <template>
     
-    <div class="seq-clip-color-indicator"></div>
+    <div class="seq-clip-color-indicator" :style="{background:color}"></div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent, computed, onRenderTracked }    from 'vue'
+import { useStore }                     from 'vuex'
 
 export default defineComponent({
 
-    components : {}
+    setup() {
+
+        const store = useStore()
+        const color = computed(() => store.getters.getSelectedClipColor)
+
+        console.log(color)
+
+        onRenderTracked(() => console.log('render!'))
+
+        return { color }
+
+    }
 
 })
 

@@ -4,7 +4,7 @@ export class BaseTrack {
 
         private _isActive   = true,
         private _isSolo     = false,
-        private _isSelected = false,
+        private _isSelected = Math.random() > 0.5,
 
     ){}
 

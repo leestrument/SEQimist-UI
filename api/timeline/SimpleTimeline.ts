@@ -118,6 +118,11 @@ export class SimpleTimeline {
         return this._clips 
     
     }
+    public getLastSelectedClip(): MidiClip {
+
+        return this._clips[this._lastSelectedClipIndex]
+
+    }
     public multipleClipsAreSelected(): boolean {
 
         return this._multipleClipsAreSelected
