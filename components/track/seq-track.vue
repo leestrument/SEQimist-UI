@@ -6,7 +6,7 @@
         <seq-track-mute/>
         <seq-track-solo/>
         <seq-track-multi-sequencer :track-index="trackIndex"/>
-        <seq-track-border v-if="isSelected"/>
+        <seq-track-border v-if="isSelected" :track-index="trackIndex"/>
 
     </div>
 
@@ -37,7 +37,7 @@ export default defineComponent({
 
 })
 
-</script>zx
+</script>
 
 <style scoped>
 

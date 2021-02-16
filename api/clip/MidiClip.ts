@@ -8,7 +8,12 @@ export class MidiClip extends BaseClip {
         private _visibleTrackCount  = Math.floor(Math.random() * 16) + 1,
         private _tracks             = Array.from({length : 64}, () => new MultiSequencerTrack)
 
-    ){ super() }
+    ){ 
+        
+        super()
+        this._tracks[0].select() // select first track!
+    
+    }
 
     public setVisibleTrackCount (trackCount: number)    : void                  { this._visibleTrackCount = trackCount }
     public getVisibleTrackCount ()                      : number                { return this._visibleTrackCount }

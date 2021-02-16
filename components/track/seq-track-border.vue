@@ -1,16 +1,25 @@
 <template>
     
-    <div class="seq-track-border"></div>
+    <div class="seq-track-border" :style="{borderColor:color}"></div>
 
 </template>
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent, computed }    from 'vue'
+import { useStore }                     from 'vuex'
 
 export default defineComponent({
 
-    components : {}
+    props : { trackIndex : { type : Number, required : true }},
+    setup(props) {
+
+        const store = useStore()
+        const color = computed(() => store.getters.getTrackColor(props.trackIndex))
+
+        return { color }
+
+    }
 
 })
 
@@ -24,6 +33,7 @@ export default defineComponent({
         width : 100%;
         height : 100%;
         border: 1px solid white;
+        z-index: 1;
 
     }
 
