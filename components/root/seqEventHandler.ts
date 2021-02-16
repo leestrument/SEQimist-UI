@@ -1,4 +1,5 @@
 import { SEQimist } from '../../api/container/SEQimist'
+import { MidiClip } from '../../api/clip/MidiClip'
 
 /* helpers */
 const getEventTargetId      = (e): string => {
@@ -27,22 +28,25 @@ const seqEventHandler = (seq:SEQimist, e): void => {
         const id        = getEventTargetId(e)
         const timeline  = seq.getTimeline()
         
-        if      (id === 'add-clip')         timeline.addClip()
-        else if (id === 'remove-clip')      timeline.removeSelectedClips()
+        if      (id === 'add-clip')         timeline.AddTab(new MidiClip)
+        else if (id === 'remove-clip')      timeline.removeSelectedTabs()
         else if (id.includes('clip-id')) {
 
             const clipIndex = getIndexFromId(id)
 
-            if      (keyIsNotPressed(e))        timeline.selectSingleClip(clipIndex)
-            else if (commandKeyIsPressed(e))    timeline.selectAnotherClip(clipIndex)
-            else if (shiftKeyIsPressed(e))      timeline.selectMultipleClipsByRange(clipIndex)
+            if      (keyIsNotPressed(e))        timeline.selectSingleTab(clipIndex)
+            else if (commandKeyIsPressed(e))    timeline.selectAnotherTab(clipIndex)
+            else if (shiftKeyIsPressed(e))      timeline.selectMultipleTabsByRange(clipIndex)
 
         }
         else if (id.includes('track-header')) {
 
             const trackIndex = getIndexFromId(id)
 
-            timeline.getLastSelectedClip().getTracks()[trackIndex].select()
+            if      (keyIsNotPressed(e))        timeline.getLastSelectedTab().getEditor().selectSingleTab(trackIndex)
+            else if (commandKeyIsPressed(e))    timeline.getLastSelectedTab().getEditor().selectAnotherTab(trackIndex)
+            else if (shiftKeyIsPressed(e))      timeline.getLastSelectedTab().getEditor().selectMultipleTabsByRange(trackIndex)
+
 
         }
 

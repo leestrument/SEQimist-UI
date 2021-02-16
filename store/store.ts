@@ -6,25 +6,19 @@ const store = createStore({
     state : () => new SEQimist,
     getters : {
 
-        getClips                    : (state) => state.getTimeline().getClips(),
-        multipleClipsAreSelected    : (state) => state.getTimeline().multipleClipsAreSelected(),
-        getSelectedClipColor        : (state) => state.getTimeline().getLastSelectedClip().getColor(),
-        getTrackCount               : (state) => state.getTimeline().getLastSelectedClip().getVisibleTrackCount(),
-        getClipColor                : (state) => (clipIndex: number)  => state.getTimeline().getClips()[clipIndex].getColor(),
-        isSelectedClip              : (state) => (clipIndex: number)  => state.getTimeline().getClips()[clipIndex].isSelected(),
-        isSelectedTrack             : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].isSelected(),
-        hasPianoRoll                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getMultiSequencer().hasPianoRoll(),
-        getTrackColor               : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getColor(),
-        getGridCount                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getMultiSequencer().getPianoRoll().getGridCount(),
-        getSlotCount                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getMultiSequencer().getStepSequencer().getGridCount(),
+        getClips                    : (state) => state.getTimeline().getTabs(),
+        multipleClipsAreSelected    : (state) => state.getTimeline().multipleTabsAreSelected(),
+        getSelectedClipColor        : (state) => state.getTimeline().getLastSelectedTab().getColor(),
+        getTrackCount               : (state) => state.getTimeline().getLastSelectedTab().getVisibleTrackCount(),
+        getClipColor                : (state) => (clipIndex: number)  => state.getTimeline().getTabs()[clipIndex].getColor(),
+        isSelectedClip              : (state) => (clipIndex: number)  => state.getTimeline().getTabs()[clipIndex].isSelected(),
+        isSelectedTrack             : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedTab().getEditor().getTabs()[trackIndex].isSelected(),
+        hasPianoRoll                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedTab().getEditor().getTabs()[trackIndex].getMultiSequencer().hasPianoRoll(),
+        getTrackColor               : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedTab().getEditor().getTabs()[trackIndex].getColor(),
+        getGridCount                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedTab().getEditor().getTabs()[trackIndex].getMultiSequencer().getPianoRoll().getGridCount(),
+        getSlotCount                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedTab().getEditor().getTabs()[trackIndex].getMultiSequencer().getStepSequencer().getGridCount(),
 
     },
-
-    mutations : {
-
-        addClip : (state): void => state.getTimeline().addClip(),
-
-    }
 
 })
 
