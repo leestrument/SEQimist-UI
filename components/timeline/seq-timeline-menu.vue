@@ -2,40 +2,11 @@
     
     <div class="seq-timeline-menu">
 
-        <!-- Add clip -->
-        <lee-button id="add-clip">
-            
-            <svg-plus/>
-        
-        </lee-button>
-
-        <!-- Remove clip -->
-        <lee-button id="remove-clip">
-            
-            <svg-trash-can/>
-    
-        </lee-button>
-
-        <!-- Duplicate clip -->
-        <lee-button>
-            
-            <svg-duplicate/>
-        
-        </lee-button>
-
-        <!-- Shuffle clip. -->
-        <lee-button>
-            
-            <svg-dice/>
-        
-        </lee-button>
-
-        <!-- Export Clip. -->
-        <lee-button>
-            
-            <svg-share/>
-        
-        </lee-button>
+        <lee-button id="add-clip">           <svg-plus/>         </lee-button>
+        <lee-button id="remove-clip">        <svg-trash-can/>    </lee-button>
+        <lee-button id="duplicate-clip">     <svg-duplicate/>    </lee-button>
+        <lee-button id="shuffle-clip">       <svg-dice/>         </lee-button>
+        <lee-button id="export-clip">        <svg-share/>        </lee-button>
 
     </div>
 
@@ -44,6 +15,7 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
+import { useStore }         from 'vuex'
 import LeeButton            from '../helper/lee-button.vue'
 import SvgPlus              from '../svg/svg-plus.vue'
 import SvgTrashCan          from '../svg/svg-trash-can.vue'
@@ -53,15 +25,14 @@ import SvgShare             from '../svg/svg-share.vue'
 
 export default defineComponent({
 
-    components : { 
-        
-        LeeButton, 
-        SvgPlus,
-        SvgTrashCan,
-        SvgDuplicate,
-        SvgDice,
-        SvgShare,
-    
+    components : { LeeButton, SvgPlus, SvgTrashCan, SvgDuplicate, SvgDice, SvgShare },
+    setup() {
+
+        const store = useStore()
+        const addClip = (): void => store.commit('addClip')
+
+        return { addClip }
+
     }
 
 })

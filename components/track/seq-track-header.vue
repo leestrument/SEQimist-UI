@@ -1,6 +1,6 @@
 <template>
 
-    <div class="seq-track-header-wrapper">
+    <div class="seq-track-header-wrapper" :id="id">
 
         <div class="seq-track-header" :style="{background:color}"></div>
 
@@ -19,9 +19,10 @@ export default defineComponent({
     setup(props) {
 
         const store = useStore()
+        const id    = computed(() => `track-header-${props.trackIndex}`)
         const color = computed(() => store.getters.getTrackColor(props.trackIndex))
 
-        return { color }
+        return { id, color }
 
     }
 
@@ -40,7 +41,6 @@ export default defineComponent({
 
     .seq-track-header {
 
-        /* background: tomato; */
         position: relative;
         width: 100%;
         height: 100%;

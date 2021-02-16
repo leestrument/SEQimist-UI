@@ -1,6 +1,6 @@
 <template>
     
-    <div class="seq" @mousedown="seqEventHandler(seq, $event)">
+    <div class="seq" @mousedown="seqEventHandler(store.state, $event)">
 
         <seq-header/>
         <seq-nav/>
@@ -14,27 +14,26 @@
 <script lang="ts">
 
 import { defineComponent }  from 'vue'
-import { useStore }         from "vuex"
+import { useStore }         from 'vuex'
 import seqEventHandler      from './seqEventHandler'
 import SeqHeader            from '../layout/header/seq-header.vue'
 import SeqNav               from '../layout/nav/seq-nav.vue'
 import SeqContent           from '../layout/content/seq-content.vue'
 import SeqInfo              from '../info/seq-info.vue'
 
-export default defineComponent({ 
+export default defineComponent({
     
     components : { SeqHeader, SeqNav, SeqContent, SeqInfo },
     setup() {
 
         const store = useStore()
-        const seq   = store.state
 
-        return { seq, seqEventHandler }
+        return { store, seqEventHandler }
 
-    }
+    } 
 
 })
-
+    
 </script>
 
 <style scoped>

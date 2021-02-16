@@ -19,7 +19,7 @@ export default defineComponent({
     components  : { SeqStep },
     setup() {
 
-        const hasStep = Math.random() > 0.5
+        const hasStep = false
 
         return { hasStep }
 

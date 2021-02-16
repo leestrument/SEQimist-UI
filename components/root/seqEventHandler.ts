@@ -9,7 +9,7 @@ const getEventTargetId      = (e): string => {
     return target.id
 
 }
-const getClipIndex          = (clipId: string): number => parseInt(clipId.replace('clip-id-', ''))
+const getIndexFromId        = (id: string): number => parseInt(id.split('-').pop())
 
 const isLeftButton          = (e): Boolean => e.button === 0
 const keyIsNotPressed       = (e): Boolean => !e.ctrlKey && !e.metaKey  && !e.shiftKey  && !e.altKey
@@ -31,14 +31,20 @@ const seqEventHandler = (seq:SEQimist, e): void => {
         else if (id === 'remove-clip')      timeline.removeSelectedClips()
         else if (id.includes('clip-id')) {
 
-            const clipIndex = getClipIndex(id)
+            const clipIndex = getIndexFromId(id)
 
             if      (keyIsNotPressed(e))        timeline.selectSingleClip(clipIndex)
             else if (commandKeyIsPressed(e))    timeline.selectAnotherClip(clipIndex)
             else if (shiftKeyIsPressed(e))      timeline.selectMultipleClipsByRange(clipIndex)
 
         }
+        else if (id.includes('track-header')) {
 
+            const trackIndex = getIndexFromId(id)
+
+            timeline.getLastSelectedClip().getTracks()[trackIndex].select()
+
+        }
 
     }
 

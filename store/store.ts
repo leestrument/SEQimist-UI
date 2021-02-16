@@ -18,6 +18,12 @@ const store = createStore({
         getGridCount                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getMultiSequencer().getPianoRoll().getGridCount(),
         getSlotCount                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getMultiSequencer().getStepSequencer().getGridCount(),
 
+    },
+
+    mutations : {
+
+        addClip : (state): void => state.getTimeline().addClip(),
+
     }
 
 })

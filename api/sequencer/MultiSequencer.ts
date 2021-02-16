@@ -7,7 +7,7 @@ export class MultiSequencer {
 
     constructor(
 
-        private _type               = Math.random() > 0.5 ? SequencerType.PianoRoll : SequencerType.StepSequencer,
+        private _type               = SequencerType.StepSequencer,
         private _pianoRoll          = new PianoRoll,
         private _stepSequencer      = new StepSequencer
 
