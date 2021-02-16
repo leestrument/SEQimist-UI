@@ -2,7 +2,7 @@
     
     <div class="seq-step">
 
-        <seq-sub-step v-for="e in subStepCount" :key="e" :color="color"/>
+        <seq-sub-step v-for="e in subStepCount" :key="e" :track-index="trackIndex"/>
 
     </div>
 
@@ -15,8 +15,8 @@ import SeqSubStep           from './seq-sub-step.vue'
 
 export default defineComponent({
 
-    props : { color : { type : String, required : true } },
-    components : { SeqSubStep },
+    props       : { trackIndex : { type : Number, required : true }},
+    components  : { SeqSubStep },
     setup() {
 
         const subStepCount = Math.floor(Math.random() * 8) + 1

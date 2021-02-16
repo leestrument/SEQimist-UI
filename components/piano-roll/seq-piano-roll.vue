@@ -14,7 +14,7 @@
                 width : noteDuration - 1 + '%',
                    
             }"
-            :color="color"
+            :track-index="trackIndex"
             v-show="Math.random() > 0.5"
         
         />
@@ -32,8 +32,8 @@ import SeqNoteBox               from '../note/seq-note-box.vue'
 
 export default defineComponent({
 
-    props : { color : { type : String, required : true } },
-    components : { SeqPianoRollBeatDivider, SeqPianoRollGrid, SeqNoteBox },
+    props       : { trackIndex : { type : Number, required : true }},
+    components  : { SeqPianoRollBeatDivider, SeqPianoRollGrid, SeqNoteBox },
     setup() {
 
         const noteCount = 16

@@ -2,7 +2,7 @@
     
     <div class="seq-note-box">
 
-        <seq-note :color="color"/>
+        <seq-note :track-index="trackIndex"/>
 
     </div>
 
@@ -15,8 +15,8 @@ import SeqNote              from './seq-note.vue'
 
 export default defineComponent({
 
-    props : { color : { type : String, required : true } },
-    components : { SeqNote }
+    props       : { trackIndex : { type : Number, required : true }},
+    components  : { SeqNote }
 
 })
 

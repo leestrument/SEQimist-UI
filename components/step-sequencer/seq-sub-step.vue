@@ -17,17 +17,20 @@
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
+import { defineComponent, computed }    from 'vue'
+import { useStore }                     from 'vuex'
 
 export default defineComponent({
 
-    props : { color : { type : String, required : true } },
-    setup() {
+    props : { trackIndex : { type : Number, required : true } },
+    setup(props) {
 
+        const store = useStore()
+        const color = computed(() => store.getters.getTrackColor(props.trackIndex))
         const velocity = Math.floor(Math.random() * 128) + 1
         const brightness = velocity / 128 * 0.7 + 0.3
 
-        return { brightness }
+        return { color, brightness }
 
     }
 

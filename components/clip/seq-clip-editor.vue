@@ -6,7 +6,7 @@
         
             v-for="(e, i) in trackCount" 
             :key="i"
-            :index="i"
+            :track-index="i"
         
         />
 

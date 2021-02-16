@@ -2,10 +2,10 @@
     
     <div class="seq-track">
     
-        <seq-track-header :color="color"/>
+        <seq-track-header :track-index="trackIndex"/>
         <seq-track-mute/>
         <seq-track-solo/>
-        <seq-track-multi-sequencer :index="index" :color="color"/>
+        <seq-track-multi-sequencer :track-index="trackIndex"/>
         <seq-track-border v-if="isSelected"/>
 
     </div>
@@ -25,20 +25,19 @@ import SeqTrackBorder                   from './seq-track-border.vue'
 export default defineComponent({ 
     
     components  : { SeqTrackHeader, SeqTrackMute, SeqTrackSolo, SeqTrackMultiSequencer, SeqTrackBorder },
-    props       : { index : { type : Number, required : true }},
+    props       : { trackIndex : { type : Number, required : true }},
     setup(props) {
 
-        const color         = `hsl(${Math.floor(Math.random() * 360)}, 60%, 50%)`
         const store         = useStore()
-        const isSelected    = computed(() => store.getters.isSelectedTrack(props.index))
+        const isSelected    = computed(() => store.getters.isSelectedTrack(props.trackIndex))
 
-        return { color, isSelected }
+        return { isSelected }
 
     } 
 
 })
 
-</script>
+</script>zx
 
 <style scoped>
 

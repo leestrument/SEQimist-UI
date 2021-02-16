@@ -2,7 +2,7 @@
     
     <div class="seq-note">
 
-        <seq-sub-note v-for="e in subNoteCount" :key="e" :color="color"/>
+        <seq-sub-note v-for="e in subNoteCount" :key="e" :track-index="trackIndex"/>
 
     </div>
 
@@ -15,8 +15,8 @@ import SeqSubNote           from './seq-sub-note.vue'
 
 export default defineComponent({
 
-    props : { color : { type : String, required : true } },
-    components : { SeqSubNote },
+    props       : { trackIndex : { type : Number, required : true }},
+    components  : { SeqSubNote },
     setup() {
 
         const subNoteCount = Math.floor(Math.random() * 8) + 1

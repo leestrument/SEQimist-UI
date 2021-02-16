@@ -2,7 +2,7 @@
     
     <div class="seq-step-slot">
 
-        <seq-step v-if="hasStep" :color="color"/>
+        <seq-step v-if="hasStep" :track-index="trackIndex"/>
 
     </div>
 
@@ -15,8 +15,8 @@ import SeqStep              from './seq-step.vue'
 
 export default defineComponent({
 
-    props : { color : { type : String, required : true } },
-    components : { SeqStep },
+    props       : { trackIndex : { type : Number, required : true }},
+    components  : { SeqStep },
     setup() {
 
         const hasStep = Math.random() > 0.5

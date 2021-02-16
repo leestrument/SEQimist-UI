@@ -2,8 +2,8 @@
     
     <div class="seq-track-multi-sequencer">
 
-        <seq-piano-roll     v-if="hasPianoRoll"  :color="color"/>
-        <seq-step-sequencer v-else               :color="color"/>
+        <seq-piano-roll     v-if="hasPianoRoll"  :track-index="trackIndex"/>
+        <seq-step-sequencer v-else               :track-index="trackIndex"/>
 
     </div>
 
@@ -18,17 +18,12 @@ import SeqStepSequencer                 from '../step-sequencer/seq-step-sequenc
 
 export default defineComponent({
 
-    props : { 
-        
-        index : { type : Number, required : true },
-        color : { type : String, required : true } 
-
-    },
-    components : { SeqPianoRoll, SeqStepSequencer },
+    props       : { trackIndex : { type : Number, required : true } },
+    components  : { SeqPianoRoll, SeqStepSequencer },
     setup(props) {
 
         const store = useStore()
-        const hasPianoRoll = computed(() => store.getters.hasPianoRoll(props.index))
+        const hasPianoRoll = computed(() => store.getters.hasPianoRoll(props.trackIndex))
 
         return { hasPianoRoll }
 
