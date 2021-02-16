@@ -12,8 +12,9 @@ const store = createStore({
         getTrackCount               : (state) => state.getTimeline().getLastSelectedClip().getVisibleTrackCount(),
         isSelectedTrack             : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].isSelected(),
         hasPianoRoll                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getMultiSequencer().hasPianoRoll(),
-        getTrackColor               : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getColor()
-        
+        getTrackColor               : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getColor(),
+        getGridCount                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getMultiSequencer().getPianoRoll().getGridCount(),
+        getSlotCount                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getMultiSequencer().getStepSequencer().getGridCount(),
 
     }
 

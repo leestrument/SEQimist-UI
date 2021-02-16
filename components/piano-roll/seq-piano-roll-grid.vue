@@ -2,7 +2,7 @@
     
     <div class="seq-piano-roll-grid">
         
-        <seq-piano-roll-grid-item v-for="e in 16" :key="e"/>
+        <seq-piano-roll-grid-item v-for="e in gridCount" :key="e"/>
 
     </div>
 
@@ -10,12 +10,22 @@
 
 <script lang="ts">
 
-import { defineComponent }  from 'vue'
-import SeqPianoRollGridItem from './seq-piano-roll-grid-item.vue'
+import { defineComponent, computed }    from 'vue'
+import { useStore }                     from 'vuex'
+import SeqPianoRollGridItem             from './seq-piano-roll-grid-item.vue'
 
 export default defineComponent({
 
-    components : { SeqPianoRollGridItem }
+    props       : { trackIndex : { type : Number, required : true }},
+    components  : { SeqPianoRollGridItem },
+    setup(props) {
+
+        const store     = useStore()
+        const gridCount = computed(() => store.getters.getGridCount(props.trackIndex))
+
+        return { gridCount }
+
+    } 
 
 })
 

@@ -19,7 +19,7 @@ export default defineComponent({
     components  : { SeqSubStep },
     setup() {
 
-        const subStepCount = Math.floor(Math.random() * 8) + 1
+        const subStepCount = 1
 
         return { subStepCount }
 
@@ -37,7 +37,7 @@ export default defineComponent({
         width : 100%;
         height : 100%;
         border-radius: 5px;
-        /* box-shadow: inset 1px 1px 2px rgb(150, 150, 150), inset -1px -1px 2px black; */
+        box-shadow: inset 1px 1px 2px rgb(100, 100, 100), inset -1px -1px 2px rgb(50, 50, 50);
 
         display: grid;
         grid-auto-flow: column;

@@ -19,7 +19,7 @@ export default defineComponent({
     components  : { SeqSubNote },
     setup() {
 
-        const subNoteCount = Math.floor(Math.random() * 8) + 1
+        const subNoteCount = 1
 
         return { subNoteCount }
 

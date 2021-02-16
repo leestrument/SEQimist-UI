@@ -2,7 +2,7 @@
     
     <div class="seq-step-sequencer">
 
-        <seq-step-box v-for="e in stepCount" :key="e" :track-index="trackIndex"/>
+        <seq-step-box v-for="e in slotCount" :key="e" :track-index="trackIndex"/>
 
     </div>
 
@@ -10,18 +10,20 @@
 
 <script lang="ts">
 
-import { defineComponent } from 'vue'
-import SeqStepBox from './seq-step-box.vue'
+import { defineComponent, computed }    from 'vue'
+import { useStore }                     from 'vuex'
+import SeqStepBox                       from './seq-step-box.vue'
 
 export default defineComponent({
 
     props       : { trackIndex : { type : Number, required : true }},
     components  : { SeqStepBox },
-    setup() {
+    setup(props) {
 
-        const stepCount = Math.floor(Math.random() * 32) + 1
+        const store         = useStore()
+        const slotCount     = computed(() => store.getters.getSlotCount(props.trackIndex))
 
-        return { stepCount }
+        return { slotCount }
 
     }
 

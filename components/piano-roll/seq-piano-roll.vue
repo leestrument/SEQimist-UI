@@ -3,7 +3,7 @@
     <div class="seq-piano-roll">
 
         <seq-piano-roll-beat-divider/>
-        <seq-piano-roll-grid/>
+        <seq-piano-roll-grid :track-index="trackIndex"/>
         <seq-note-box
         
             v-for="(e, i) in noteCount"
@@ -36,7 +36,7 @@ export default defineComponent({
     components  : { SeqPianoRollBeatDivider, SeqPianoRollGrid, SeqNoteBox },
     setup() {
 
-        const noteCount = 16
+        const noteCount = 1
         const noteStarts = []
         const noteDuration = 6.25
 

@@ -6,7 +6,7 @@ export abstract class BaseSequencer {
     constructor(
 
         protected _notes    : { [id: string] : BaseNote } = {}, 
-        private _gridCount  = 16,
+        private _gridCount  = Math.floor(Math.random() * 16) + 1,
 
     ){}
 

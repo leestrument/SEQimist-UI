@@ -46,7 +46,7 @@ export default defineComponent({
         display: flex;
         flex-direction: column-reverse;
         /* grid-auto-flow: rows; */
-        /* gap: 2px; */
+        gap: 2px;
 
     }
 
