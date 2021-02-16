@@ -45,7 +45,7 @@ export default defineComponent({
 
         /* border-radius: 4px; */
         /* box-shadow: inset 1px 1px 2px rgb(150, 150, 150), inset -1px -1px 2px black; */
-
+        flex-grow: 1; /* parent display is flex, to stretch height, we need this. */
         position: relative;
         display: grid;
         grid-template-columns: var(--track-column-ratio);

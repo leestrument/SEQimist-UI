@@ -43,9 +43,10 @@ export default defineComponent({
         background: rgb(15, 15, 15);
         box-shadow: inset 2px 2px 4px black, inset -2px -2px 4px rgb(63, 63, 63);
 
-        display: grid;
-        grid-auto-flow: rows;
-        gap: 2px;
+        display: flex;
+        flex-direction: column-reverse;
+        /* grid-auto-flow: rows; */
+        /* gap: 2px; */
 
     }
 
