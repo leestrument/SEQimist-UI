@@ -2,7 +2,7 @@ export class BaseTrack {
 
     constructor(
 
-        private _color      = 'red',
+        private _color      = `hsl(${Math.floor(Math.random() * 360)}, 50%, 40%)`,
         private _isActive   = true,
         private _isSolo     = false,
         private _isSelected = Math.random() > 0.5,
