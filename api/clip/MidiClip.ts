@@ -1,7 +1,7 @@
-import { BaseClip } from './BaseClip'
-import { MultiSequencerTrack } from '../track/MultiSequencerTrack'
+import { LeeSelectable }        from '../helper/LeeSelectable'
+import { MultiSequencerTrack }  from '../track/MultiSequencerTrack'
 
-export class MidiClip extends BaseClip {
+export class MidiClip extends LeeSelectable {
 
     constructor(
 
