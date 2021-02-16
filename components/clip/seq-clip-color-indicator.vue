@@ -6,7 +6,7 @@
 
 <script lang="ts">
 
-import { defineComponent, computed, onRenderTracked }    from 'vue'
+import { defineComponent, computed }    from 'vue'
 import { useStore }                     from 'vuex'
 
 export default defineComponent({
@@ -15,10 +15,6 @@ export default defineComponent({
 
         const store = useStore()
         const color = computed(() => store.getters.getSelectedClipColor)
-
-        console.log(color)
-
-        onRenderTracked(() => console.log('render!'))
 
         return { color }
 

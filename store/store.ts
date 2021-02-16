@@ -10,6 +10,8 @@ const store = createStore({
         multipleClipsAreSelected    : (state) => state.getTimeline().multipleClipsAreSelected(),
         getSelectedClipColor        : (state) => state.getTimeline().getLastSelectedClip().getColor(),
         getTrackCount               : (state) => state.getTimeline().getLastSelectedClip().getVisibleTrackCount(),
+        getClipColor                : (state) => (clipIndex: number)  => state.getTimeline().getClips()[clipIndex].getColor(),
+        isSelectedClip              : (state) => (clipIndex: number)  => state.getTimeline().getClips()[clipIndex].isSelected(),
         isSelectedTrack             : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].isSelected(),
         hasPianoRoll                : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getMultiSequencer().hasPianoRoll(),
         getTrackColor               : (state) => (trackIndex: number) => state.getTimeline().getLastSelectedClip().getTracks()[trackIndex].getColor(),

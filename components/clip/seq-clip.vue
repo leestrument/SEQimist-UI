@@ -3,7 +3,7 @@
     <div 
     
         class       ="seq-clip"
-        :style      ="{ left : clipStart, background : color }"
+        :style      ="{ left : clipStart, background : clipColor }"
         :class      ="clipClassName"
         :id         ="clipId"
     
@@ -13,27 +13,24 @@
 
 <script lang="ts">
 
-import { defineComponent, computed, onRenderTracked }   from 'vue'
+import { defineComponent, computed, onRenderTracked } from 'vue'
+import { useStore } from 'vuex'
 
 export default defineComponent({
 
-    props : { 
-        
-        index       : { type : Number,  required : true },
-        color       : { type : String,  required : true },
-        isSelected  : { type : Boolean, required : true },
-    
-    },
-
+    props : { clipIndex : { type : Number,  required : true } },
+         
     setup(props) {
+        
+        const store         = useStore()
+        const clipStart     = computed(() => props.clipIndex * 6.25 + '%')
+        const clipColor     = computed(() => store.getters.getClipColor(props.clipIndex))
+        const clipClassName = computed(() => store.getters.isSelectedClip(props.clipIndex) ? 'selected' : 'deselected')
+        const clipId        = computed(() => 'clip-id-' + props.clipIndex)
 
-        const clipStart     = computed(() => props.index * 6.25 + '%')
-        const clipClassName = computed(() => props.isSelected ? 'selected' : 'deselected')
-        const clipId        = computed(() => 'clip-id-' + props.index)
+        // onRenderTracked(() => console.log('render!'))
 
-        // onRenderTracked(() => console.log('rendered!'))
-
-        return { clipStart,  clipClassName, clipId }
+        return { clipStart,  clipColor, clipClassName, clipId }
 
     }
 

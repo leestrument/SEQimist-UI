@@ -7,9 +7,7 @@
         
             v-for           ="(clip, i) in clips" 
             :key            ="i" 
-            :index          ="i"
-            :color          ="clip.getColor()"
-            :is-selected    ="clip.isSelected()"
+            :clip-index     ="i"
         
         />
 
