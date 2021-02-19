@@ -107,7 +107,7 @@ export class LeeTabs {
 
     }
 
-
+    
     private unselectOtherTabs(tabIndexToExclude: number): void {
 
         this._tabs.forEach((tab, tabIndex) => { 
